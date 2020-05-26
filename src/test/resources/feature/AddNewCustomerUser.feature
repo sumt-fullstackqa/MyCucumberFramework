@@ -1,9 +1,9 @@
 #Author: sumit.mishra@cloudsmartz.net
-Feature: Add New user Feature
-  This feature deals with customer admin user is able to add new user.
+Feature: Add New Customer user Feature
+  This feature deals with customer admin user is able to add new Customer user.
 
    @RegressionTest
-  Scenario: Verify that Customer admin user is able to add new user
+  Scenario: Verify that Customer admin user is able to add new customer user
     Given login with customer admin
     And click on the customer user management menu icon
     And click on the add new customer user button
