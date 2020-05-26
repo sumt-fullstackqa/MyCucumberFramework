@@ -18,7 +18,7 @@ import cucumber.api.junit.Cucumber;
 
                                monochrome = true, dryRun = false)
 
-public class FeatureLoginRunner {
+public class Runner {
 	
 	@AfterClass
     public static void writeExtentReport() {
