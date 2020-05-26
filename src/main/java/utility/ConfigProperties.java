@@ -81,5 +81,10 @@ public class ConfigProperties {
 	public static final String CUSTOMERUSERMIDDLENAME = configProperties.getProperty("customerusermiddlename");
 	public static final String CUSTOMERUSERLASTNAME = configProperties.getProperty("customeruserlastname");
 	public static final String CUSTOMERUSERPHONENUMBER = configProperties.getProperty("customeruserphonenumber");
+	public static final String UPDATECUSTOMEREMAILADDRESS = configProperties.getProperty("updatecustomeremailaddress");
+	public static final String UPDATECUSTOMERUSERFIRSTNAME = configProperties.getProperty("updatecustomeruserfirstname");
+	public static final String UPDATECUSTOMERUSERMIDDLENAME = configProperties.getProperty("updatecustomerusermiddlename");
+	public static final String UPDATECUSTOMERUSERLASTNAME = configProperties.getProperty("updatecustomeruserlastname");
+	public static final String UPDATECUSTOMERUSERPHONENUMBER = configProperties.getProperty("updatecustomeruserphonenumber");
 	
 }
