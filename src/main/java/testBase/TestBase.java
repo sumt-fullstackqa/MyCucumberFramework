@@ -52,7 +52,7 @@ public class TestBase extends ConfigProperties {
 		wait.ignoring(NoSuchElementException.class);
 		wait.ignoring(ElementNotVisibleException.class);
 		wait.ignoring(StaleElementReferenceException.class);
-		//wait.ignoring(ElementNotFoundException.class);
+		// wait.ignoring(ElementNotFoundException.class);
 		wait.pollingEvery(250, TimeUnit.MILLISECONDS);
 		// wait.until(elementLocated(element));
 		wait.until(ExpectedConditions.visibilityOf(element));
@@ -71,11 +71,10 @@ public class TestBase extends ConfigProperties {
 
 	public String takeScreenShot(String name) throws IOException {
 
-		/*if (driver instanceof HtmlUnitDriver) {
-			log.fatal("HtmlUnitDriver Cannot take the ScreenShot");
-			return "";
-		}
-*/
+		/*
+		 * if (driver instanceof HtmlUnitDriver) {
+		 * log.fatal("HtmlUnitDriver Cannot take the ScreenShot"); return ""; }
+		 */
 		File destDir = new File(ResourceHelper.getResourcePath("screenshots/") + DateTimeHelper.getCurrentDate());
 		if (!destDir.exists())
 			destDir.mkdir();
@@ -120,6 +119,35 @@ public class TestBase extends ConfigProperties {
 		return flag;
 	}
 
+	public static WebElement waitForElementToBeVisible(WebElement webelement, WebDriver driver, int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement element = wait.until(ExpectedConditions.visibilityOf(webelement));
+		return element;
+
+	}
+
+	public static WebElement waitForElementToBeClickable(WebElement webelement, WebDriver driver, int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webelement));
+		return element;
+
+	}
+
+	public static void executionDelay(int n) {
+		try {
+			Thread.sleep(n * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void sendKeys(WebDriver driver, WebElement element) {
+		element.clear();
+		element.click();
+
+	}
+
 	// Browser case
 
 	public WebDriver getBrowserObject(BrowserType bType) throws Exception {
@@ -152,12 +180,13 @@ public class TestBase extends ConfigProperties {
 		}
 	}
 
-/*	public static void main(String args[]) throws Exception {
-		TestBase tb = new TestBase();
-		//tb.getBrowserObject(BrowserType.Chrome).navigate().to(ObjectRepo.reader.getUrl());
-		tb.setUpDriver(ObjectRepo.reader.getBrowser());
-		System.out.println(ObjectRepo.reader.getUrl());
-	}*/
+	/*
+	 * public static void main(String args[]) throws Exception { TestBase tb = new
+	 * TestBase();
+	 * //tb.getBrowserObject(BrowserType.Chrome).navigate().to(ObjectRepo.reader.
+	 * getUrl()); tb.setUpDriver(ObjectRepo.reader.getBrowser());
+	 * System.out.println(ObjectRepo.reader.getUrl()); }
+	 */
 
 	public void setUpDriver(BrowserType bType) throws Exception {
 
