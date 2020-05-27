@@ -3,7 +3,7 @@
 Feature: Edit customer ticket
   This feature deals with customer admin user is able to edit the ticket.
 
-@EditTicket
+@RegressionTest
   Scenario: Verify that customer admin user is able to edit the ticket
     Given login to seaborn application with customer admin
     And click on the tickets menu icon
