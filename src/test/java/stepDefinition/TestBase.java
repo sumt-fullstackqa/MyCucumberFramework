@@ -2,6 +2,8 @@ package stepDefinition;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -18,8 +20,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.cucumber.listener.Reporter;
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import com.google.common.base.Function;
+import com.google.common.io.Files;
 
 import configreader.ObjectRepo;
 import configreader.PropertyFileReader;
@@ -38,7 +42,7 @@ import utility.ResourceHelper;
 public class TestBase {
 
 	private final Logger log = LoggerHelper.getLogger(TestBase.class);
-
+	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	public static WebDriver driver;
 
 	public void waitForElement(WebElement element, int timeOutInSeconds) {
@@ -113,6 +117,47 @@ public class TestBase {
 		log.info(flag);
 		return flag;
 	}
+	
+	public static WebElement waitForElementToBeVisible(WebElement webelement, WebDriver driver, int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement element = wait.until(ExpectedConditions.visibilityOf(webelement));
+		return element;
+
+	}
+
+	public static WebElement waitForElementToBeClickable(WebElement webelement, WebDriver driver, int seconds) {
+		WebDriverWait wait = new WebDriverWait(driver, seconds);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webelement));
+		return element;
+
+	}
+
+	public static void clickElement(WebDriver driver, WebElement element) {
+		element.click();
+
+	}
+
+	public static void executionDelay(int n) {
+		try {
+			Thread.sleep(n * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static void holdon(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+		}
+	}
+	
+	public static void sendKeys(WebDriver driver, WebElement element) {
+		element.clear();
+		element.click();
+
+	}
 
 	// Browser case
 
@@ -164,8 +209,20 @@ public class TestBase {
 
 	@After
 	public void after(Scenario scenario) throws Exception {
-		driver.quit();
-		log.info("Browser closed");
+		scenario.write("Scenario finished");
+		if (scenario.isFailed()) {
+			String screenshotName = scenario.getName().replaceAll(" ", "_");
+			try {
+				TakesScreenshot ts = (TakesScreenshot) driver;
+				File sourcePath = ts.getScreenshotAs(OutputType.FILE);
+				File destinationPath = new File(System.getProperty("user.dir") + "\\Screenshot\\" + timeStamp + ".png");
+				Files.copy(sourcePath, destinationPath);
+				Reporter.addScreenCaptureFromPath(destinationPath.toString());
+			} catch (IOException e) {
+			}
+			driver.quit();
+			log.info("Browser closed");
+		}
 	}
 
 }

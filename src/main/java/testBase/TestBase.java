@@ -133,6 +133,11 @@ public class TestBase extends ConfigProperties {
 
 	}
 
+	public static void clickElement(WebDriver driver, WebElement element) {
+		element.click();
+
+	}
+
 	public static void executionDelay(int n) {
 		try {
 			Thread.sleep(n * 1000);
@@ -142,6 +147,13 @@ public class TestBase extends ConfigProperties {
 		}
 	}
 
+	public static void holdon(int sec) {
+		try {
+			Thread.sleep(sec * 1000);
+		} catch (InterruptedException e) {
+		}
+	}
+	
 	public static void sendKeys(WebDriver driver, WebElement element) {
 		element.clear();
 		element.click();
