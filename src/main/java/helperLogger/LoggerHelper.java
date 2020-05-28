@@ -3,10 +3,6 @@ package helperLogger;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
-import utility.ResourceHelper;
-
-
-
 @SuppressWarnings("rawtypes")
 public class LoggerHelper {
 
@@ -16,7 +12,7 @@ public class LoggerHelper {
 		if (root) {
 			return Logger.getLogger(clas);
 		}
-		PropertyConfigurator.configure(ResourceHelper.getResourcePath("/src/main/resources/configfile/log4j.properties"));
+		PropertyConfigurator.configure("log4j.properties");
 		root = true;
 		return Logger.getLogger(clas);
 	}

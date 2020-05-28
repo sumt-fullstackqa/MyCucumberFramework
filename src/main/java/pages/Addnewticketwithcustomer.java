@@ -53,6 +53,8 @@ public class Addnewticketwithcustomer {
 		sbloginoobj.clicksignin();
 		Thread.sleep(5000);
 		add_new_ticketwithcustomer.click();
+		Thread.sleep(5000);
+		
 	}
 
 	public void clickonRaiseticketbutton() throws Exception {

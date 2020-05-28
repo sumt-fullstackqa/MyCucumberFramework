@@ -13,3 +13,11 @@ Feature: Raise New Ticket with Customer login
     And click on select files and add attachment
     And click on save button for this form
     Then success message should be shown
+
+  @RegressionTest
+  Scenario: Verify that customer admin user is able to edit the ticket
+    Given login to seaborn application with customer admin
+    And click on the tickets menu icon
+    When user click on edit ticket
+    And add details
+    Then ticket updated successfully

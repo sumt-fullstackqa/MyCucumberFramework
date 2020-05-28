@@ -87,4 +87,7 @@ public class ConfigProperties {
 	public static final String UPDATECUSTOMERUSERLASTNAME = configProperties.getProperty("updatecustomeruserlastname");
 	public static final String UPDATECUSTOMERUSERPHONENUMBER = configProperties.getProperty("updatecustomeruserphonenumber");
 	
+	public static final String UPDATEDTICKETDESCRIPTION = configProperties.getProperty("TicketupdatedDescription");
+	public static final String UPDATEDTICKETNAME = configProperties.getProperty("Ticketupdatedname");
+	
 }

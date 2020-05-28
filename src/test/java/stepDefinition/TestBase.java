@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -117,7 +118,7 @@ public class TestBase {
 		log.info(flag);
 		return flag;
 	}
-	
+
 	public static WebElement waitForElementToBeVisible(WebElement webelement, WebDriver driver, int seconds) {
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		WebElement element = wait.until(ExpectedConditions.visibilityOf(webelement));
@@ -136,7 +137,8 @@ public class TestBase {
 		element.click();
 
 	}
-
+	
+	
 	public static void executionDelay(int n) {
 		try {
 			Thread.sleep(n * 1000);
@@ -152,11 +154,16 @@ public class TestBase {
 		} catch (InterruptedException e) {
 		}
 	}
-	
+
 	public static void sendKeys(WebDriver driver, WebElement element) {
 		element.clear();
 		element.click();
 
+	}
+
+	public static void inputText(WebElement element, String value) {
+		element.clear();
+		element.sendKeys(value);
 	}
 
 	// Browser case

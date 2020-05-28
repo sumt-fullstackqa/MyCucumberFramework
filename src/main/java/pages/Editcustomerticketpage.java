@@ -1,14 +1,21 @@
 package pages;
 
+import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 
 public class Editcustomerticketpage extends TestBase {
 	public static WebDriver driver;
+
+	Logger log = LoggerHelper.getLogger(Editcustomerticketpage.class);
 
 	public Editcustomerticketpage(WebDriver driver) {
 		this.driver = driver;
@@ -30,8 +37,8 @@ public class Editcustomerticketpage extends TestBase {
 	@FindBy(how = How.CSS, using = "input#saveCustomerTicketBtn")
 	private WebElement ticketupdateButton;
 
-	@FindBy(how = How.CSS, using = "span.ct-active")
-	private WebElement ticketnameFilter;
+	@FindBy(how = How.CSS, using = "a.k-grid-filter")
+	private List<WebElement> ticketnameFilter;
 
 	@FindBy(how = How.CSS, using = "form.k-filter-menu>div:nth-child(1)>input:nth-child(3)")
 	private WebElement FilterinputTextField;
@@ -42,36 +49,54 @@ public class Editcustomerticketpage extends TestBase {
 	@FindBy(how = How.CSS, using = "div.k-grid-content>table>tbody>tr>td:nth-child(2)")
 	private WebElement ticketvalue;
 
+	@FindBy(how = How.CSS, using = "span#createNewCustomerTicketFormDiv_wnd_title")
+	private WebElement EditTicketScreen;
+
 	public void editLink() {
 		clickElement(driver, actionIcon);
 		waitForElement(editactionIcon, 2);
 		clickElement(driver, editactionIcon);
 		executionDelay(5);
+		String editscreentext = EditTicketScreen.getText();
+		if (editscreentext.equalsIgnoreCase("Edit Ticket")) {
+			log.info("Edit Ticket screen is opened " + EditTicketScreen.getText());
+
+		} else {
+			log.info("Edit Ticket screen not found");
+
+		}
 
 	}
 
 	public void updateDetails(String ticketname, String description) {
 		waitForElement(ticketnameTextField, 2);
-		sendKeys(driver, ticketnameTextField);
+		inputText(ticketnameTextField, ticketname);
 		waitForElement(ticketdescriptionTextarea, 2);
-		sendKeys(driver, ticketdescriptionTextarea);
-		clickElement(driver, ticketupdateButton);
+		inputText(ticketdescriptionTextarea, description);
 		executionDelay(5);
+		clickElement(driver, ticketupdateButton);
+		executionDelay(10);
 	}
 
-	public void search(String updatedname) {
-		clickElement(driver, ticketnameFilter);
+	public void search(String searchtext) {
+		ticketnameFilter.get(1).click();
 		waitForElementToBeVisible(FilterinputTextField, driver, 2);
-		sendKeys(driver, FilterinputTextField);
-		waitForElementToBeClickable(FilterButton, driver, 2);
-		clickElement(driver, FilterButton);
+		inputText(FilterinputTextField, searchtext);
 		executionDelay(2);
-		if (ticketvalue.getText().equalsIgnoreCase(updatedname)) {
-			System.out.println("Ticket updated successfully");
+		clickElement(driver, FilterButton);
+		executionDelay(5);
+		String ticketname = ticketvalue.getText();
+		if (ticketname.equalsIgnoreCase(searchtext)) {
+			log.info("Ticketname found in the list -" + ticketname);
 		} else {
-			System.out.println("Ticket not updated name not matches");
+			log.info("Ticketname not found");
 		}
 
+	}
+
+	public void cleanup(String ttname, String tdescription) {
+		editLink();
+		updateDetails(ttname, tdescription);
 	}
 
 }
