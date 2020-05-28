@@ -2,7 +2,7 @@
 Feature: Deactivate and Activate Customer User Feature
   This feature deals with customer admin user is able to deactivate and activate customer user
 
-  @smoketest
+  @RegressionTest
   Scenario: Verify that Customer admin user is able to deactivate and activate customer user
     Given login with customer credentials to the seaborn portal
     And click on user management menu icon
