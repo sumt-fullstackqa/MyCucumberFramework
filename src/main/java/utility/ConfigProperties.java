@@ -90,4 +90,5 @@ public class ConfigProperties {
 	public static final String UPDATEDTICKETNAME = configProperties.getProperty("Ticketupdatedname");
 	public static final String NEWPASSWORD = configProperties.getProperty("NewPassword");
 	public static final String CONFIRMPASSWORD = configProperties.getProperty("ConfirmPassword");
+	public static final String TICKETCOMMENTS = configProperties.getProperty("Comments");
 }
