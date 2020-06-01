@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -20,6 +19,7 @@ import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.cucumber.listener.Reporter;
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
@@ -42,7 +42,7 @@ import utility.ResourceHelper;
 
 public class TestBase {
 
-	private final Logger log = LoggerHelper.getLogger(TestBase.class);
+	private final static Logger log = LoggerHelper.getLogger(TestBase.class);
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	public static WebDriver driver;
 
@@ -137,8 +137,7 @@ public class TestBase {
 		element.click();
 
 	}
-	
-	
+
 	public static void executionDelay(int n) {
 		try {
 			Thread.sleep(n * 1000);
@@ -207,6 +206,17 @@ public class TestBase {
 		/* driver.manage().window().maximize(); */
 	}
 
+	public void notifymessage(WebElement webElement, String expMsg) {
+		expMsg = webElement.getText();
+		if (webElement.isDisplayed() == true && expMsg.contains("updated successfully.")) {
+			log.info("Message Appears on Screen : " + expMsg);
+
+		} else {
+			log.info("Message does not get displayed on Screen");
+		}
+
+	}
+
 	@Before
 	public void before() throws Exception {
 		ObjectRepo.reader = new PropertyFileReader();
@@ -227,6 +237,7 @@ public class TestBase {
 				Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			} catch (IOException e) {
 			}
+
 			driver.quit();
 			log.info("Browser closed");
 		}
