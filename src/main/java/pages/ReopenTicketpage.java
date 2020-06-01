@@ -12,7 +12,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-import cucumber.runtime.junit.ExecutionUnitRunner;
 import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 
