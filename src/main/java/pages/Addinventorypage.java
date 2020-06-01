@@ -106,7 +106,7 @@ public class Addinventorypage {
 		Thread.sleep(3000);
 		
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].scrollIntoView(true);", rackstartunit );;
+		js.executeScript("arguments[0].scrollIntoView(true);", rackstartunit );
 		
 		Select rackstartunit = new Select(driver.findElement(By.xpath("//select[@id='rackStartUnit']")));
 		rackstartunit.selectByVisibleText("5");

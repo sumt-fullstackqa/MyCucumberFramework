@@ -90,4 +90,11 @@ public class ConfigProperties {
 	public static final String UPDATEDTICKETNAME = configProperties.getProperty("Ticketupdatedname");
 	public static final String NEWPASSWORD = configProperties.getProperty("NewPassword");
 	public static final String CONFIRMPASSWORD = configProperties.getProperty("ConfirmPassword");
+	public static final String PORTDISPLAYNAMEFORELINE = configProperties.getProperty("PortDisplayNameforeline");
+	public static final String DURATIONPORTFORELINE = configProperties.getProperty("Durationportforeline");
+	public static final String LINENAME = configProperties.getProperty("LineName");
+	public static final String DURATIONELINE = configProperties.getProperty("DurationEline");
+	public static final String POREFERENCEIDELINE = configProperties.getProperty("PoreferenceIDEline");
+	public static final String COMMENTSSPECIALINSTRUCTIONELINE = configProperties.getProperty("CommentsspecialInstructionEline");
+	
 }

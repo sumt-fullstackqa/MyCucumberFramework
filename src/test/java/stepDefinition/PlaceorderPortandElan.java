@@ -8,7 +8,7 @@ import cucumber.api.java.en.When;
 import pages.Portandelanorder;
 import utility.ConfigProperties;
 
-public class Placeorder {
+public class PlaceorderPortandElan {
 
 	Portandelanorder placeorder = new Portandelanorder(TestBase.driver);
 
