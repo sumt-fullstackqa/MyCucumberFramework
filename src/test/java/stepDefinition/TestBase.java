@@ -19,7 +19,6 @@ import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import com.cucumber.listener.Reporter;
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
@@ -237,10 +236,9 @@ public class TestBase {
 				Reporter.addScreenCaptureFromPath(destinationPath.toString());
 			} catch (IOException e) {
 			}
-
-			driver.quit();
-			log.info("Browser closed");
 		}
+		driver.quit();
+		log.info("Browser closed");
 	}
 
 }
