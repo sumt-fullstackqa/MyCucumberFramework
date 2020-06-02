@@ -97,5 +97,10 @@ public class ConfigProperties {
 	public static final String DURATIONELINE = configProperties.getProperty("DurationEline");
 	public static final String POREFERENCEIDELINE = configProperties.getProperty("PoreferenceIDEline");
 	public static final String COMMENTSSPECIALINSTRUCTIONELINE = configProperties.getProperty("CommentsspecialInstructionEline");
-	
+	public static final String PORTDISPLAYNAMEFORETREE = configProperties.getProperty("PortDisplayNameforetree");
+	public static final String DURATIONPORTFORETREE = configProperties.getProperty("Durationportforetree");
+	public static final String TREENAME = configProperties.getProperty("TreeName");
+	public static final String DURATIONETREE = configProperties.getProperty("DurationETree");
+	public static final String POREFERENCEIDETREE = configProperties.getProperty("PoreferenceIDETree");
+	public static final String COMMENTSSPECIALINSTRUCTIONETREE = configProperties.getProperty("CommentsspecialInstructionETree");
 }
