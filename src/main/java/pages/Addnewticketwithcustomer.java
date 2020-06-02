@@ -51,7 +51,7 @@ public class Addnewticketwithcustomer {
 	public void clickOnAddNewticketwithcustomer() throws Exception {
 		sbloginoobj.Login(ConfigProperties.CUSTOMERUSEREMAIL, ConfigProperties.CUSTOMERPASSWORD);
 		sbloginoobj.clicksignin();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		add_new_ticketwithcustomer.click();
 		Thread.sleep(5000);
 		
