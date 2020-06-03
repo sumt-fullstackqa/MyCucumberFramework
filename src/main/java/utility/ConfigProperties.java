@@ -103,4 +103,5 @@ public class ConfigProperties {
 	public static final String DURATIONETREE = configProperties.getProperty("DurationETree");
 	public static final String POREFERENCEIDETREE = configProperties.getProperty("PoreferenceIDETree");
 	public static final String COMMENTSSPECIALINSTRUCTIONETREE = configProperties.getProperty("CommentsspecialInstructionETree");
+	public static final String PORTDISPLAYNAMEFORREQUESTPORT = configProperties.getProperty("PortDisplayNameforRequestPort");
 }
