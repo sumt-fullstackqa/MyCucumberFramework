@@ -104,4 +104,9 @@ public class ConfigProperties {
 	public static final String POREFERENCEIDETREE = configProperties.getProperty("PoreferenceIDETree");
 	public static final String COMMENTSSPECIALINSTRUCTIONETREE = configProperties.getProperty("CommentsspecialInstructionETree");
 	public static final String PORTDISPLAYNAMEFORREQUESTPORT = configProperties.getProperty("PortDisplayNameforRequestPort");
+	public static final String UPDATEEMAILADDRESS = configProperties.getProperty("updateemailaddress");
+	public static final String UPDATEFIRSTNAME = configProperties.getProperty("updatefirstname");
+	public static final String UPDATEMIDDLENAME = configProperties.getProperty("updatemiddlename");
+	public static final String UPDATELASTNAME = configProperties.getProperty("updatelastname");
+	public static final String UPDATEPHONENUMBER = configProperties.getProperty("updatephonenumber");
 }
