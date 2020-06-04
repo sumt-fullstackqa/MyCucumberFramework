@@ -2,7 +2,7 @@
 Feature: view networks
   I want to use this template for my feature file
 
-  @networks
+  @RegressionTest
   Scenario: view networks
     Given login to seaborn application with customer admin
     And click on the service Management
