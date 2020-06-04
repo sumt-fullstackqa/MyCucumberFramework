@@ -215,6 +215,24 @@ public class TestBase {
 		}
 
 	}
+	
+	
+	public static boolean isElementDisplayed(WebElement element) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, 10);
+	        wait.until(ExpectedConditions.visibilityOf(element));
+	        return element.isDisplayed();
+	    } catch (org.openqa.selenium.NoSuchElementException
+	            | org.openqa.selenium.StaleElementReferenceException
+	            | org.openqa.selenium.TimeoutException e) {
+	        return false;
+	    }
+	}
+	public static void isloading(WebElement element, int timeout) {
+	    if (isElementDisplayed(element)) {
+	        new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
+	    }
+	}
 
 	@Before
 	public void before() throws Exception {
