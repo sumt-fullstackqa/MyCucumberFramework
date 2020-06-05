@@ -111,9 +111,7 @@ public class ConfigProperties {
 	public static final String TEMPLATENAME = configProperties.getProperty("TemplateName");
 	public static final String TEMPLATEDURATION = configProperties.getProperty("TemplateDuration");
 	public static final String TEMPLATEDESC = configProperties.getProperty("TemplateDescription");
-	
 	public static final String UPDATEPHONENUMBER = configProperties.getProperty("updatephonenumber");
-	
-
+	public static final String PORTDISPLAYNAMEFORASSIGNPORT = configProperties.getProperty("PortDisplayNameforAssignPort");
 	
 }
