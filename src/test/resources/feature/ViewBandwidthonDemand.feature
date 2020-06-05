@@ -1,6 +1,6 @@
 #Author: ankur.bhardwaj@cloudsmartz.net
 Feature: view networks
-  I want to use this template for my feature file
+  I want to view the network details
 
   @RegressionTest
   Scenario: view networks

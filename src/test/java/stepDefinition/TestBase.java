@@ -207,7 +207,7 @@ public class TestBase {
 
 	public void notifymessage(WebElement webElement, String expMsg) {
 		expMsg = webElement.getText();
-		if (webElement.isDisplayed() == true && expMsg.contains("updated successfully.")) {
+		if (webElement.isDisplayed() == true && expMsg.contains("successfully.")) {
 			log.info("Message Appears on Screen : " + expMsg);
 
 		} else {

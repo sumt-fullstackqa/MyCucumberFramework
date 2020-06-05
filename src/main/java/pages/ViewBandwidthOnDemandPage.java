@@ -31,7 +31,7 @@ public class ViewBandwidthOnDemandPage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(how = How.CSS, using = "a.Service.Management")
+	@FindBy(how = How.XPATH, using = "//a[@class='Service Management']")
 	private WebElement servicemanagementmenu;
 
 	@FindBy(how = How.CSS, using = "svg.svg-inline--fa.fa-spinner.fa-w-16.fa-spin")

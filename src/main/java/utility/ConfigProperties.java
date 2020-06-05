@@ -108,5 +108,12 @@ public class ConfigProperties {
 	public static final String UPDATEFIRSTNAME = configProperties.getProperty("updatefirstname");
 	public static final String UPDATEMIDDLENAME = configProperties.getProperty("updatemiddlename");
 	public static final String UPDATELASTNAME = configProperties.getProperty("updatelastname");
+	public static final String TEMPLATENAME = configProperties.getProperty("TemplateName");
+	public static final String TEMPLATEDURATION = configProperties.getProperty("TemplateDuration");
+	public static final String TEMPLATEDESC = configProperties.getProperty("TemplateDescription");
+	
 	public static final String UPDATEPHONENUMBER = configProperties.getProperty("updatephonenumber");
+	
+
+	
 }
