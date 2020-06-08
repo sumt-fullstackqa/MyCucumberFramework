@@ -113,5 +113,9 @@ public class ConfigProperties {
 	public static final String TEMPLATEDESC = configProperties.getProperty("TemplateDescription");
 	public static final String UPDATEPHONENUMBER = configProperties.getProperty("updatephonenumber");
 	public static final String PORTDISPLAYNAMEFORASSIGNPORT = configProperties.getProperty("PortDisplayNameforAssignPort");
+	public static final String ACCOUNTNUMBER = configProperties.getProperty("Accountnumber");
+	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
+	public static final String STATENAME = configProperties.getProperty("statename");
+	
 	
 }

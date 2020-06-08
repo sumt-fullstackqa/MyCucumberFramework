@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -18,7 +19,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.cucumber.listener.Reporter;
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
@@ -215,23 +218,41 @@ public class TestBase {
 		}
 
 	}
-	
-	
-	public static boolean isElementDisplayed(WebElement element) {
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, 10);
-	        wait.until(ExpectedConditions.visibilityOf(element));
-	        return element.isDisplayed();
-	    } catch (org.openqa.selenium.NoSuchElementException
-	            | org.openqa.selenium.StaleElementReferenceException
-	            | org.openqa.selenium.TimeoutException e) {
-	        return false;
-	    }
+
+	public void clickOnExistingListElement(String configValue, List<WebElement> list) {
+		if (list.size() == 0) {
+			Assert.fail("No Record Exists");
+		} else {
+			for (WebElement li : list) {
+				if (li.getText().equalsIgnoreCase(configValue)) {
+					System.out.println("Record matches :" + li.getText());
+					li.click();
+					break;
+				}
+			}
+		}
 	}
+
+	public void dropDownList(WebElement countryIdDropdown, String value) {
+		Select dropdownlist = new Select(countryIdDropdown);
+		dropdownlist.selectByVisibleText(value);
+	}
+
+	public static boolean isElementDisplayed(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.visibilityOf(element));
+			return element.isDisplayed();
+		} catch (org.openqa.selenium.NoSuchElementException | org.openqa.selenium.StaleElementReferenceException
+				| org.openqa.selenium.TimeoutException e) {
+			return false;
+		}
+	}
+
 	public static void isloading(WebElement element, int timeout) {
-	    if (isElementDisplayed(element)) {
-	        new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
-	    }
+		if (isElementDisplayed(element)) {
+			new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
+		}
 	}
 
 	@Before
