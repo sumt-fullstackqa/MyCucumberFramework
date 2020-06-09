@@ -12,9 +12,10 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addcompany {
+public class Addcompany extends TestBase {
 
 	public static WebDriver driver;
+	static String emailAddress;
 
 	public Addcompany(WebDriver driver) {
 		this.driver = driver;
@@ -67,14 +68,15 @@ public class Addcompany {
 		Thread.sleep(5000);
 	}
 
-	public void companySelectvalues(String company_name_1, String company_email_1,String company_firstname_1, String company_lastname_1,String contactnumber_value, String corporatecontactnumber_value, String taxid_value, String postalcode_value, String address_1, String city_1) {
+	public void companySelectvalues(String company_firstname_1, String company_lastname_1,String contactnumber_value, String corporatecontactnumber_value, String taxid_value, String postalcode_value, String address_1, String city_1) {
 
-		customer_name.sendKeys(company_name_1);
-		customer_email.sendKeys(company_email_1);
-		firstname.sendKeys(company_firstname_1);
-		lastname.sendKeys(company_lastname_1);
-		contactnumber.sendKeys(contactnumber_value);
-		corporatecontactnumber.sendKeys(corporatecontactnumber_value);
+		inputText(customer_name, getSaltString());
+		inputText(customer_email, getSaltString()+"@gmail.com");
+		emailAddress = customer_email.getAttribute("value");
+		inputText(firstname, company_firstname_1);
+		inputText(lastname, company_lastname_1);
+		inputText(contactnumber, contactnumber_value);
+		inputText(corporatecontactnumber, corporatecontactnumber_value);
 		TaxID.sendKeys(taxid_value);
 		postalcode.sendKeys(postalcode_value);
 		address.sendKeys(address_1);

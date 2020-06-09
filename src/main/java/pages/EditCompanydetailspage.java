@@ -23,6 +23,7 @@ import stepDefinition.TestBase;
 public class EditCompanydetailspage extends TestBase {
 
 	public static WebDriver driver;
+	static String emailAddress;
 
 	String heading;
 
@@ -94,12 +95,13 @@ public class EditCompanydetailspage extends TestBase {
 
 	}
 
-	public void EditCompanyDetails(String companyname, String accnumber, String countrydrp, String address, String city,
+	public void EditCompanyDetails(String countrydrp, String address, String city,
 			String state, String taxid) {
 		log.info("updating the companyname");
-		inputText(companynameTextField, companyname);
+		inputText(companynameTextField, getSaltString());
 		log.info("updating the accountnumber");
-		inputText(accountnumberTextField, accnumber);
+		inputText(accountnumberTextField, getSaltString());
+		executionDelay(2);
 		log.info("select the country");
 		dropDownList(countryIdDropdown, countrydrp);
 		log.info("updating the address");
@@ -114,7 +116,8 @@ public class EditCompanydetailspage extends TestBase {
 
 	public void EditContactDetails(String emailaddress, String firstname, String lastname, String country) {
 		log.info("updating the emailaddress");
-		inputText(emailaddresstextField, emailaddress);
+		inputText(emailaddresstextField, getSaltString()+"@gmail.com");
+		emailAddress = emailaddresstextField.getAttribute("value");
 		log.info("updating the first name");
 		inputText(firstnametextField, firstname);
 		log.info("updating the last name");

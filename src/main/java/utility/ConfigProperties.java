@@ -27,8 +27,6 @@ public class ConfigProperties {
 	public static final int PAGELOADTIME = Integer.parseInt(configProperties.getProperty("PageLoadTimeOut"));
 	public static final int IMPLICITWAIT = Integer.parseInt(configProperties.getProperty("ImplicitWait"));
 	public static final int EXPLICITWAIT = Integer.parseInt(configProperties.getProperty("ExplicitWait"));
-	public static final String COMPANYNAME = configProperties.getProperty("Companyname");
-	public static final String COMPANYEMAIL = configProperties.getProperty("Companyemail");
 	public static final String ADDRESS = configProperties.getProperty("Address");
 	public static final String CITY = configProperties.getProperty("City");
 	public static final String TAXID = configProperties.getProperty("TaxID");
@@ -115,12 +113,6 @@ public class ConfigProperties {
 	public static final String PORTDISPLAYNAMEFORASSIGNPORT = configProperties.getProperty("PortDisplayNameforAssignPort");
 	public static final String REJECTREASON = configProperties.getProperty("Rejectreason");
 	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
-    public static final String ACCOUNTNUMBER = configProperties.getProperty("Accountnumber");
-	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
-	public static final String STATENAME = configProperties.getProperty("statename");
-	public static final String REJECTREASON = configProperties.getProperty("Rejectreason");
-	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
-	public static final String ACCOUNTNUMBER = configProperties.getProperty("Accountnumber");
 	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
 	public static final String STATENAME = configProperties.getProperty("statename");
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -237,6 +238,7 @@ public class TestBase {
 		Select dropdownlist = new Select(countryIdDropdown);
 		dropdownlist.selectByVisibleText(value);
 	}
+	
 
 	public static boolean isElementDisplayed(WebElement element) {
 		try {
@@ -253,6 +255,18 @@ public class TestBase {
 		if (isElementDisplayed(element)) {
 			new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
 		}
+	}
+	public static String getSaltString() {
+		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+		StringBuilder salt = new StringBuilder();
+		Random rnd = new Random();
+		while (salt.length() < 10) { // length of the random string.
+			int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+			salt.append(SALTCHARS.charAt(index));
+		}
+		String saltStr = salt.toString();
+		return saltStr;
+
 	}
 
 	@Before

@@ -23,7 +23,7 @@ public class EditCompanydetailsSteps {
 
 	@When("^update the mandatory company details$")
 	public void update_the_mandatory_company_details() throws Throwable {
-		editcompanypage.EditCompanyDetails(ConfigProperties.COMPANYNAME, ConfigProperties.ACCOUNTNUMBER, ConfigProperties.COUNTRYNAME, ConfigProperties.ADDRESS, ConfigProperties.CITY, ConfigProperties.STATENAME, ConfigProperties.TAXID);
+		editcompanypage.EditCompanyDetails(ConfigProperties.COUNTRYNAME, ConfigProperties.ADDRESS, ConfigProperties.CITY, ConfigProperties.STATENAME, ConfigProperties.TAXID);
 	}
 
 	@When("^click on the update company button$")
