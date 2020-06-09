@@ -118,13 +118,5 @@ public class ConfigProperties {
     public static final String ACCOUNTNUMBER = configProperties.getProperty("Accountnumber");
 	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
 	public static final String STATENAME = configProperties.getProperty("statename");
-    public static final String REJECTREASON = configProperties.getProperty("Rejectreason");
-	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
-	public static final String REJECTREASON = configProperties.getProperty("Rejectreason");
-	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
-	public static final String ACCOUNTNUMBER = configProperties.getProperty("Accountnumber");
-	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
-	public static final String STATENAME = configProperties.getProperty("statename");
-	
-	
+   
 }
