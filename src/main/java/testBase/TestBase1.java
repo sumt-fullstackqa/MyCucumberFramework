@@ -40,9 +40,9 @@ import utility.ConfigProperties;
 import utility.DateTimeHelper;
 import utility.ResourceHelper;
 
-public class TestBase extends ConfigProperties {
+public class TestBase1 extends ConfigProperties {
 
-	private final Logger log = LoggerHelper.getLogger(TestBase.class);
+	private final Logger log = LoggerHelper.getLogger(TestBase1.class);
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
 	public static WebDriver driver;
@@ -212,14 +212,14 @@ public class TestBase extends ConfigProperties {
 
 	}
 
-	@Before
+	
 	public void before() throws Exception {
 		ObjectRepo.reader = new PropertyFileReader();
 		setUpDriver(ObjectRepo.reader.getBrowser());
 		log.info(ObjectRepo.reader.getBrowser());
 	}
 
-	@After
+	
 	public void after(Scenario scenario) throws Exception {
 		scenario.write("Scenario finished");
 		if (scenario.isFailed()) {
