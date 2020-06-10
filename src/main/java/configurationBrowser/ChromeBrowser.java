@@ -29,6 +29,7 @@ public class ChromeBrowser {
 		return chrome;
 	}
 
+	@SuppressWarnings("deprecation")
 	public WebDriver getChromeDriver(Capabilities capabilities) {
 		if (System.getProperty("os.name").contains("Mac")) {
 			System.setProperty("webdriver.chrome.driver",

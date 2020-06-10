@@ -28,6 +28,7 @@ public class AddNewTemplatepage extends TestBase {
 	
 	Logger log = LoggerHelper.getLogger(AddNewTemplatepage.class);
 	
+	@SuppressWarnings("static-access")
 	public AddNewTemplatepage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

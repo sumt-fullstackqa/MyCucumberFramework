@@ -2,7 +2,6 @@ package configurationBrowser;
 
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.internal.ElementScrollBehavior;
 import org.openqa.selenium.remote.CapabilityType;
@@ -25,6 +24,7 @@ public class IExploreBrowser {
 		return cap;
 	}
 
+	@SuppressWarnings("deprecation")
 	public WebDriver getIExplorerDriver(Capabilities cap) {
 		System.setProperty("webdriver.ie.driver",
 				ResourceHelper.getResourcePath("/src/main/resources/drivers/MicrosoftWebDriver.exe"));

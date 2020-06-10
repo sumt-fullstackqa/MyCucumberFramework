@@ -49,6 +49,7 @@ public class TestBase {
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	public static WebDriver driver;
 
+	@SuppressWarnings("deprecation")
 	public void waitForElement(WebElement element, int timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.ignoring(NoSuchElementException.class);
@@ -276,6 +277,7 @@ public class TestBase {
 		log.info(ObjectRepo.reader.getBrowser());
 	}
 
+	@SuppressWarnings("unused")
 	@After
 	public void after(Scenario scenario) throws Exception {
 		scenario.write("Scenario finished");

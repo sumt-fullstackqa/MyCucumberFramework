@@ -1,18 +1,15 @@
 package pages;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-import java.io.File;
 
-import configreader.ObjectRepo;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
@@ -20,6 +17,7 @@ public class Addnewticketwithcustomer {
 
 	public static WebDriver driver;
 
+	@SuppressWarnings("static-access")
 	public Addnewticketwithcustomer(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -51,7 +49,7 @@ public class Addnewticketwithcustomer {
 	public void clickOnAddNewticketwithcustomer() throws Exception {
 		sbloginoobj.Login(ConfigProperties.CUSTOMERUSEREMAIL, ConfigProperties.CUSTOMERPASSWORD);
 		sbloginoobj.clicksignin();
-		Thread.sleep(10000);
+		Thread.sleep(20000);
 		add_new_ticketwithcustomer.click();
 		Thread.sleep(5000);
 		

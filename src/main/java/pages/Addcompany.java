@@ -17,6 +17,7 @@ public class Addcompany extends TestBase {
 	public static WebDriver driver;
 	static String emailAddress;
 
+	@SuppressWarnings("static-access")
 	public Addcompany(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

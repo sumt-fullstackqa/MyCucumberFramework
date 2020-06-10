@@ -8,9 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-import configreader.ObjectRepo;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
@@ -18,6 +16,7 @@ public class Addinventoryinterconnect {
 
 	public static WebDriver driver;
 
+	@SuppressWarnings("static-access")
 	public Addinventoryinterconnect(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

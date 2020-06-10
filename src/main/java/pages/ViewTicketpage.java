@@ -25,6 +25,7 @@ public class ViewTicketpage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(ViewTicketpage.class);
 
+	@SuppressWarnings("static-access")
 	public ViewTicketpage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
