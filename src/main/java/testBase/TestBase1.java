@@ -33,8 +33,6 @@ import configurationBrowser.FirefoxBrowser;
 import configurationBrowser.HtmlUnitBrowser;
 import configurationBrowser.IExploreBrowser;
 import cucumber.api.Scenario;
-import cucumber.api.java.After;
-import cucumber.api.java.Before;
 import helperLogger.LoggerHelper;
 import utility.ConfigProperties;
 import utility.DateTimeHelper;
@@ -47,6 +45,7 @@ public class TestBase1 extends ConfigProperties {
 
 	public static WebDriver driver;
 
+	@SuppressWarnings("deprecation")
 	public void waitForElement(WebElement element, int timeOutInSeconds) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		wait.ignoring(NoSuchElementException.class);
@@ -59,6 +58,7 @@ public class TestBase1 extends ConfigProperties {
 
 	}
 
+	@SuppressWarnings("unused")
 	private Function<WebDriver, Boolean> elementLocated(final WebElement element) {
 		return new Function<WebDriver, Boolean>() {
 
