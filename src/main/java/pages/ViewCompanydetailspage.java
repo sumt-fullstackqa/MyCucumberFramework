@@ -11,7 +11,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 import helperLogger.LoggerHelper;
-import stepDefinition.TestBase;
+import stepDefinition.*;
 import utility.ConfigProperties;
 
 /**
@@ -25,6 +25,7 @@ public class ViewCompanydetailspage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(ViewCompanydetailspage.class);
 
+	@SuppressWarnings("static-access")
 	public ViewCompanydetailspage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
