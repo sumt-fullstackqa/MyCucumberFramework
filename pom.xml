@@ -96,7 +96,7 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<includes>
-						<include>FeatureLoginRunner.java</include>
+						<include>Runner.java</include>
 					</includes>
 				</configuration>
 			</plugin>
