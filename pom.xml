@@ -109,7 +109,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
-							<projectName>MPC-Automation</projectName>
+							<projectName>Seaborn-Automation</projectName>
 							<outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
 							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
 						</configuration>

@@ -3,6 +3,7 @@ package configurationBrowser;
 import java.util.HashMap;
 
 import org.openqa.selenium.Capabilities;
+import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -15,30 +16,33 @@ public class ChromeBrowser {
 
 	public static WebDriver driver;
 
-	public Capabilities getChromeCapabilities() {
+	public ChromeOptions getChromeCapabilities() {
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 		chromePrefs.put("profile.default_content_settings.popups", 0);
 		chromePrefs.put("download.default_directory", System.getProperty("user.dir"));
-		ChromeOptions option = new ChromeOptions();
+		ChromeOptions option = new ChromeOptions();	
 		option.setExperimentalOption("prefs", chromePrefs);
 		option.addArguments("start-maximized");
-		DesiredCapabilities chrome = DesiredCapabilities.chrome();
-		chrome.setJavascriptEnabled(true);
-		chrome.setCapability(ChromeOptions.CAPABILITY, option);
-		chrome.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
-		return chrome;
+		option.setAcceptInsecureCerts(true);
+		DesiredCapabilities cap = new DesiredCapabilities();
+		option.merge(cap);
+		cap.setJavascriptEnabled(true);
+		cap.setCapability(ChromeOptions.CAPABILITY, option);
+		cap.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
+		cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+		return option;
 	}
 
-	@SuppressWarnings("deprecation")
-	public WebDriver getChromeDriver(Capabilities capabilities) {
+
+	public WebDriver getChromeDriver(ChromeOptions option) {
 		if (System.getProperty("os.name").contains("Mac")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("/src/main/resources/drivers/chromedriver.exe"));
-			return new ChromeDriver(capabilities);
+			return new ChromeDriver(option);
 		} else if (System.getProperty("os.name").contains("Window")) {
 			System.setProperty("webdriver.chrome.driver",
 					ResourceHelper.getResourcePath("/src/main/resources/drivers/chromedriver.exe"));
-			return new ChromeDriver(capabilities);
+			return new ChromeDriver(option);
 
 		}
 		return null;
