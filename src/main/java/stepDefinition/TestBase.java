@@ -19,11 +19,13 @@ import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 //import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 import com.cucumber.listener.Reporter;
 //import com.gargoylesoftware.htmlunit.ElementNotFoundException;
@@ -33,7 +35,6 @@ import com.google.common.io.Files;
 import configreader.ObjectRepo;
 import configreader.PropertyFileReader;
 import configurationBrowser.BrowserType;
-import configurationBrowser.ChromeBrowser;
 import configurationBrowser.FirefoxBrowser;
 import configurationBrowser.HtmlUnitBrowser;
 import configurationBrowser.IExploreBrowser;
@@ -41,6 +42,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import helperLogger.LoggerHelper;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utility.DateTimeHelper;
 import utility.ResourceHelper;
 
@@ -179,8 +181,12 @@ public class TestBase {
 			switch (bType) {
 
 			case Chrome:
-				ChromeBrowser chrome = ChromeBrowser.class.newInstance();
-				return chrome.getChromeDriver(chrome.getChromeCapabilities());
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				
+				//ChromeBrowser chrome = ChromeBrowser.class.newInstance();
+				//return chrome.getChromeDriver(chrome.getChromeCapabilities());
 
 			case Firefox:
 				FirefoxBrowser firefox = FirefoxBrowser.class.newInstance();
@@ -270,12 +276,38 @@ public class TestBase {
 		return saltStr;
 
 	}
+	
+	public static WebDriver setup(String browser) {
+		if (browser.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+
+		}
+
+		else if (browser.equalsIgnoreCase("firefox")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+
+		}
+
+		else if (browser.equalsIgnoreCase("ie")) {
+			WebDriverManager.iedriver().setup();
+			driver = new InternetExplorerDriver();
+		}
+		return driver;
+
+	}
+
 
 	@Before
-	public void before() throws Exception {
-		ObjectRepo.reader = new PropertyFileReader();
-		setUpDriver(ObjectRepo.reader.getBrowser());
-		log.info(ObjectRepo.reader.getBrowser());
+	public void beforeScenario(Scenario scenario) {
+		setup("chrome");
+		System.out.println("Test Environment set up");
+		System.out.println("---------------------------------------");
+		System.out.println("Executing Scenario :" + scenario.getName());
+		Reporter.assignAuthor("Ankur Bhardwaj");
+
 	}
 
 	@SuppressWarnings("unused")
