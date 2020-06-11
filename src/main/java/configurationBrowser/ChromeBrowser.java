@@ -2,10 +2,10 @@ package configurationBrowser;
 
 import java.util.HashMap;
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -30,6 +30,7 @@ public class ChromeBrowser {
 		cap.setCapability(ChromeOptions.CAPABILITY, option);
 		cap.setCapability(CapabilityType.SUPPORTS_ALERTS, true);
 		cap.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
+		System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
 		return option;
 	}
 
