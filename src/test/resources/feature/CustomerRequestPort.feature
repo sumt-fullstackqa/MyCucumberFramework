@@ -2,7 +2,7 @@
 Feature: Customer Request Port Feature
   This feature deals with customer admin user is able to request port.
 
-  @RegressionTest
+  @CustomerRequestPort
   Scenario: Verify that Customer admin user is able to request port.
     Given login with customer admin to the SDX portal
     And click on the Assigned port menu icon

@@ -2,7 +2,7 @@
 Feature: Add New Customer user Feature
   This feature deals with customer admin user is able to add new Customer user.
 
-   @RegressionTest
+   @AddNewCustomeruser
   Scenario: Verify that Customer admin user is able to add new customer user
     Given login with customer admin
     And click on the customer user management menu icon

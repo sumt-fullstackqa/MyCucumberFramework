@@ -3,7 +3,7 @@
 Feature: Network Template
   I want to add the network template
 
- @RegressionTest
+ @NetworkTemplate
   Scenario: Add the network template
     Given login to seaborn application with customer admin
     And click on the service Management

@@ -2,7 +2,7 @@
 Feature: Add Inventory Library
   This feature deals with Service Provider user is able to add Library.
 
- @RegressionTest
+ @Library
   Scenario: Verify that service provider admin user is able to add library
     Given login to seaborn application with service provider admin
     And click on the inventory management menu and Library link

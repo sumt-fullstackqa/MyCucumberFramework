@@ -2,7 +2,7 @@
 Feature: Add Inventory Rack
   This feature deals with Service Provider user is able to add Rack.
 
-  @RegressionTest
+  @AddRack
   Scenario: Verify that service provider admin user is able to add Rack
     Given login to seaborn application with service provider admin user
     And click on the inventory management menu and Rack link

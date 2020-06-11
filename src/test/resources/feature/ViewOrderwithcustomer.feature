@@ -2,7 +2,7 @@
 Feature: view order with customer login
   This feature deals with customer admin user is able to view order from order list.
 
-  @RegressionTest
+  @vieworderwithcustomer
   Scenario: Verify that customer admin user is able to view order from order list
     Given login to seaborn with customer admin user
     And click on the manage orders icon and order list link

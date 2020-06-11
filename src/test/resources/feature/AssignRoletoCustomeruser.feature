@@ -2,7 +2,7 @@
 Feature: Assign Role to Customer user Feature
   This feature deals with customer admin user is able to assign role to customer user
 
-  @RegressionTest
+  @AssignRoletoCustomeruser
   Scenario: Verify that Customer admin user is able to assign role to customer user
     Given login to SDX portal with customer admin
     And click on the user management menu icon for customer admin 

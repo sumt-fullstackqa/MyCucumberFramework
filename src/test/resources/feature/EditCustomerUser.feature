@@ -2,7 +2,7 @@
 Feature: Edit Customer User Feature
   This feature deals with customer admin user is able to edit Customer user.
 
-  @RegressionTest
+  @EditCustomerUser
   Scenario: Verify that Customer admin user is able to edit customer user
     Given login with customer admin to the portal
     And click on customer user management menu icon

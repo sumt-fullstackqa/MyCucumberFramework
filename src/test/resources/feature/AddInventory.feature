@@ -2,7 +2,7 @@
 Feature: Add Inventory
   This feature deals with Service Provider user is able to add Inventory.
 
-  @RegressionTest
+  @Inventory
   Scenario: Verify that service provider admin user is able to add Inventory
     Given login to seaborn with service provider admin user
     And click on the inventory management menu and Inventory link

@@ -2,7 +2,7 @@
 Feature: Assign Port Feature
   This feature deals with service provider admin is able to assign new port to the company 
 
-  @RegressionTest
+  @AssignPort
   Scenario: Verify that service provider admin is able to assign new port to the company
     Given login to SDX  app with service provider admin
     And click on the inventory management menu and manage port link

@@ -2,7 +2,7 @@
 Feature: Place an order with Port and Elan 
   This feature deals with customer admin user is able to place new order with port and Elan.
 
-  @RegressionTest
+  @PortandElan 
   Scenario: Verify that customer admin user is able to place new order with port and Elan.
     Given login to seaborn app with customer admin
     And click on the manage orders icon and place an order link

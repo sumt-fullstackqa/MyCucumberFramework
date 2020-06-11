@@ -2,7 +2,7 @@
 Feature: View company details
   I want to view the company details
 
-  @RegressionTest
+  @Viewcompanydetails
   Scenario: View company details
     Given login to SDX with service provider admin
     And navigates to company List screen

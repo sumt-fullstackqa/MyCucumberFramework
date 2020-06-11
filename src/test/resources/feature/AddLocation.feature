@@ -2,7 +2,7 @@
 Feature: Add Inventory Location
   This feature deals with Service Provider user is able to add Location.
 
-  @RegressionTest
+  @Location
   Scenario: Verify that service provider admin user is able to add Location
     Given login to portal with service provider admin user
     And click on the inventory management menu and Location link

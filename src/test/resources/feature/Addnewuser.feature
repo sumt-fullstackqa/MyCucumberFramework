@@ -2,7 +2,7 @@
 Feature: Add New user Feature
   This feature deals with Service Provider user is able to add new user.
 
- @RegressionTest
+ @AddNewuser
   Scenario: Verify that service provider user is able to add new user
     Given login to seaborn portal
     And click on the user management menu icon

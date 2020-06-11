@@ -3,7 +3,7 @@
 Feature: View Ticket details
   I want to view the tickets details
 
-  @RegressionTest
+  @ViewTicketdetails
   Scenario: View Tickets Details
     Given login to seaborn application with customer admin
     And click on the tickets menu icon

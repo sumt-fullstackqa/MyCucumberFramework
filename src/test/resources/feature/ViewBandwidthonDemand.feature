@@ -2,7 +2,7 @@
 Feature: view networks
   I want to view the network details
 
-  @RegressionTest
+  @viewnetworks
   Scenario: view networks
     Given login to seaborn application with customer admin
     And click on the service Management

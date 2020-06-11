@@ -2,7 +2,7 @@
 Feature: Edit user Feature
   This feature deals with Service Provider user is able to edit user.
 
-  @RegressionTest
+  @Edituser
   Scenario: Verify that service provider user is able to edit user
     Given login to SDX portal with service proivder admin
     And click on the user management menu icon for SP

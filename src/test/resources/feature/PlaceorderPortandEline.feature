@@ -2,7 +2,7 @@
 Feature: Place an order with Port and Eline
   This feature deals with customer admin user is able to place new order with port and Eline.
 
-  @RegressionTest
+  @PortandEline
   Scenario: Verify that customer admin user is able to place new order with port and Eline.
     Given login to SDX Portal with customer admin
     And click on the manage orders icon and place an order

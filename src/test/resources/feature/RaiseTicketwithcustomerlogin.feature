@@ -2,7 +2,7 @@
 Feature: Raise New Ticket with Customer login
   This feature deals with customer admin user is able to raise new ticket.
 
-  @RegressionTest
+  @RaiseNewTicket
   Scenario: Verify that customer admin user is able to raise new ticket
     Given login to seaborn application with customer admin
     And click on the tickets menu icon
@@ -14,7 +14,7 @@ Feature: Raise New Ticket with Customer login
     And click on save button for this form
     Then success message should be shown
 
-  @RegressionTest
+  @editticket
   Scenario: Verify that customer admin user is able to edit the ticket
     Given login to seaborn application with customer admin
     And click on the tickets menu icon

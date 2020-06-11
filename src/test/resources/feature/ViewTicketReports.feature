@@ -2,7 +2,7 @@
 Feature: View Ticket Reports
   This feature deals with Service Provider user is able to view all Reporting Tabs.
 
-  @RegressionTest
+  @ViewTicketReports
   Scenario: Verify that service provider admin user is able to view ticketing reports for all reports tab
     Given login to seaborn portal with service provider admin user
     And click on the Ticket management menu and click on Reports

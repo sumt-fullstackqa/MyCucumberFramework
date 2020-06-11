@@ -2,7 +2,7 @@
 Feature: Add New Billing Account
   This feature deals with customer admin user is able to add new billing account.
 
-  @RegressionTest
+  @AddNewBillingAccount
   Scenario: Verify that customer admin user is able to add new billing account
     Given login to seaborn portal with customer admin
     And click on the billing accounts managemengt menu icon

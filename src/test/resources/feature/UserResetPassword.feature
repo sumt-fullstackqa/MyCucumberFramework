@@ -2,7 +2,7 @@
 Feature: User Reset Password Feature
   This feature deals with service provider admin is able to reset password of user
 
-  @RegressionTest
+  @UserResetPassword
   Scenario: Verify that service provider admin is able to reset password of user
     Given login to SDX with service provider admin
     And click on the user management menu icon for service provider admin login

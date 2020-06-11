@@ -3,7 +3,7 @@
 Feature: Login and Logout Feature
   This feature deals with user is able to login with valid credentials and logout successfully.
 
-  @RegressionTest
+  @LoginandLogout
   Scenario: User should able to login in seaborn with valid credentials
     Given I navigate to the seaborn login page
     When user enter Username and Password

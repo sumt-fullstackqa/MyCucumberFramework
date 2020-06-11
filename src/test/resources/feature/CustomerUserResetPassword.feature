@@ -2,7 +2,7 @@
 Feature: Customer User Reset Password Feature
   This feature deals with customer admin user is able to reset password of customer user
 
-  @RegressionTest
+  @CustomerUserResetPassword
   Scenario: Verify that Customer admin user is able to reset password of customer user
     Given login to SDX with customer admin
     And click on the user management menu icon for customer admin login

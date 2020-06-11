@@ -3,7 +3,7 @@
 Feature: Export file in Excel and PDF format
   I want to export files in excel and pdf format for tickets
 
-  @RegressionTest
+  @Exportfile
   Scenario: Export tickets in excel and pdf format
     Given login to seaborn application with customer admin
     And click on the tickets menu icon

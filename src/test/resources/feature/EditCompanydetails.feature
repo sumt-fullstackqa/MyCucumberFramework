@@ -2,7 +2,7 @@
 Feature: Edit the company details
   I want to edit the company details
 
-  @RegressionTest
+  @EditCompany
   Scenario: Edit the company Details
     Given login to SDX with service provider admin
     And navigates to company List screen

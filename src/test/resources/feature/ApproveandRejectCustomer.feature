@@ -2,7 +2,7 @@
 Feature: Approve and Reject Customer Feature
   This feature deals with service provider admin user is able to approve and reject customer
 
-  @RegressionTest
+  @ApproveandRejectCustomer
   Scenario: Verify that service provider admin is able to approve and reject customer 
     Given login with service provider admin credentials to the SDX portal
     And click on the 3 dotted icon for pending customer from the list and click on Reject link

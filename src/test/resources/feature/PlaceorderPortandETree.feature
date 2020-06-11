@@ -2,7 +2,7 @@
 Feature: Place an order with Port and ETree
   This feature deals with customer admin user is able to place new order with Port and ETree
 
-  @RegressionTest
+  @PortandETree
   Scenario: Verify that customer admin user is able to place new order with port and ETree .
     Given login to SDX Portal app with customer admin
     And click on the manage orders icon and place an order sub menu

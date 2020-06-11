@@ -3,7 +3,7 @@
 Feature: Reopen closed ticket
   I want to reopen the closed ticket
 
-   @RegressionTest
+   @Reopenclosedticket
    Scenario: Verify that customer admin user is able to edit the ticket
     Given login to seaborn application with customer admin
     And click on the tickets menu icon

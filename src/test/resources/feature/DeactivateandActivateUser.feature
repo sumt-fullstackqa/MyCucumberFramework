@@ -2,7 +2,7 @@
 Feature: Deactivate and Activate User Feature
   This feature deals with service provider admin user is able to deactivate and activate user
 
-  @RegressionTest
+  @DeactivateandActivateUser
   Scenario: Verify that service provider admin is able to deactivate and activate user
     Given login with service provider admin credentials to the seaborn portal
     And click on user management menu icon with SP login
