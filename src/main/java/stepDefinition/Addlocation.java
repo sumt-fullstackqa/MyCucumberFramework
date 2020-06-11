@@ -40,7 +40,7 @@ public class Addlocation{
 	@When("^enter Location Name and Location code and Address and othercity name and Zip code$")
 	public void enter_Location_Name_and_Location_code_and_Address_and_othercity_name_and_Zip_code() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		addlocation.addnewlocationSelectvalues(ConfigProperties.LOCATIONNAME, ConfigProperties.LOCATIONCODE, ConfigProperties.LOCATIONADDRESS, ConfigProperties.OTHERCITY, ConfigProperties.LOCATIONZIPCODE);
+		addlocation.addnewlocationSelectvalues(ConfigProperties.LOCATIONADDRESS, ConfigProperties.OTHERCITY, ConfigProperties.LOCATIONZIPCODE);
 	}
 
 	@And("^click on Save button for New Location form$")

@@ -31,7 +31,7 @@ public class Editcustomerusersteps {
 		@When("^clear and enter new valid customeruseremailaddress and clear and enter new customeruserfirstname and clear and enter new customerusermiddlename and clear and enter new customeruserlastname and clear and enter new customeruserphonenumber$")
 		public void clear_and_enter_new_valid_customeruseremailaddress_and_clear_and_enter_new_customeruserfirstname_and_clear_and_enter_new_customerusermiddlename_and_clear_and_enter_new_customeruserlastname_and_clear_and_enter_new_customeruserphonenumber() throws Exception {
 		    // Write code here that turns the phrase above into concrete actions
-			updatecustomeruser.customeruserUpdatevalues(ConfigProperties.UPDATECUSTOMEREMAILADDRESS, ConfigProperties.UPDATECUSTOMERUSERFIRSTNAME, ConfigProperties.UPDATECUSTOMERUSERMIDDLENAME, ConfigProperties.UPDATECUSTOMERUSERLASTNAME, ConfigProperties.UPDATECUSTOMERUSERPHONENUMBER);
+			updatecustomeruser.customeruserUpdatevalues(ConfigProperties.UPDATECUSTOMERUSERFIRSTNAME, ConfigProperties.UPDATECUSTOMERUSERMIDDLENAME, ConfigProperties.UPDATECUSTOMERUSERLASTNAME, ConfigProperties.UPDATECUSTOMERUSERPHONENUMBER);
 		}
 		@And("^select new county and select new role$")
 		public void select_new_country_and_select_new_role() throws Exception {

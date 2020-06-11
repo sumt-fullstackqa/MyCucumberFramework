@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Portandelanorder {
+public class Portandelanorder extends TestBase {
 
 	public static WebDriver driver;
 
@@ -88,7 +88,7 @@ public class Portandelanorder {
 
 	public void uniportselectlocationportandcapacity() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='uniLocation']")));
-		 dropdown1.selectByVisibleText("DFW Dallas Forth Worth Offnet");
+		 dropdown1.selectByValue("4");
 		 Thread.sleep(5000);
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
@@ -99,9 +99,9 @@ public class Portandelanorder {
 		 Thread.sleep(5000);
 	}
 
-	public void uniportSelectvalues(String portdisplay_name_1, String portduration_1) {
+	public void uniportSelectvalues(String portduration_1) {
 
-		portdisplayname.sendKeys(portdisplay_name_1);
+		inputText(portdisplayname, getSaltString());
 		portduration.sendKeys(portduration_1);
 	}
 
@@ -110,9 +110,9 @@ public class Portandelanorder {
 		Thread.sleep(5000);
 	}
 
-	public void elanSelectvalues(String elan_name_1, String elanduration_1) {
+	public void elanSelectvalues(String elanduration_1) {
 
-		elanname.sendKeys(elan_name_1);
+		inputText(elanname, getSaltString());
 		elanduration.sendKeys(elanduration_1);
 	}
 
@@ -130,7 +130,7 @@ public class Portandelanorder {
 		dropdown7.selectByVisibleText("5");
 
 		Select dropdown8 = new Select(driver.findElement(By.xpath("//select[@id='privateLanDestPort']")));
-		dropdown8.selectByVisibleText("DFW791");
+		dropdown8.selectByValue("0");
 
 	}
 

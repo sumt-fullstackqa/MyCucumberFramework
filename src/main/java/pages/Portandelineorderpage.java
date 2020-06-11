@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Portandelineorderpage {
+public class Portandelineorderpage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -102,9 +102,9 @@ public class Portandelineorderpage {
 		 Thread.sleep(5000);
 	}
 
-	public void uniportEntervalues(String portdisplay_name_1, String portduration_1) {
+	public void uniportEntervalues(String portduration_1) {
 
-		portdisplayname.sendKeys(portdisplay_name_1);
+		inputText(portdisplayname, getSaltString());
 		portduration.sendKeys(portduration_1);
 	}
 
@@ -123,9 +123,9 @@ public class Portandelineorderpage {
 		Thread.sleep(5000);
 	}
 
-	public void elineSelectvalues(String eline_name_1, String elineduration_1) throws InterruptedException {
+	public void elineSelectvalues(String elineduration_1) throws InterruptedException {
 
-		elinename.sendKeys(eline_name_1);
+		inputText(elinename, getSaltString());
 		elineduration.sendKeys(elineduration_1);
 		Thread.sleep(5000);
 	}

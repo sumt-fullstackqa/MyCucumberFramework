@@ -13,9 +13,10 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Editcustomeruserpage {
+public class Editcustomeruserpage extends TestBase {
 
 	public static WebDriver driver;
+	static String emailAddress;
 
 	public Editcustomeruserpage(WebDriver driver) {
 		this.driver = driver;
@@ -64,10 +65,10 @@ public class Editcustomeruserpage {
 		threedottedicon.click().build().perform();
 		Thread.sleep(5000);
 	}
-	public void customeruserUpdatevalues(String customeruser_email_1, String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) {
+	public void customeruserUpdatevalues(String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) {
 
 		updatecustomeruser_email.clear();
-		updatecustomeruser_email.sendKeys(customeruser_email_1);
+		inputText(updatecustomeruser_email, getSaltString()+"@gmail.com");
 		updatecustomeruserfirstname.clear();
 		updatecustomeruserfirstname.sendKeys(customeruser_firstname_1);
 		updatecustomerusermiddlename.clear();

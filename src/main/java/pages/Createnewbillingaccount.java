@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Createnewbillingaccount {
+public class Createnewbillingaccount extends TestBase {
 
 	public static WebDriver driver;
 
@@ -63,9 +63,9 @@ public class Createnewbillingaccount {
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",addnewaccount );
 		 Thread.sleep(5000);
 	}
-	public void billingSelectvalues(String billing_company_1, String billing_address_1, String billing_contactnumber_value,String billing_city_1, String billing_postalcode_value, String billing_fax_value ) {
+	public void billingSelectvalues(String billing_address_1, String billing_contactnumber_value,String billing_city_1, String billing_postalcode_value, String billing_fax_value ) {
 
-		Billingcompany.sendKeys(billing_company_1);
+		inputText(Billingcompany, getSaltString());
 		Billingaddress.sendKeys(billing_address_1);
 		billingcontactnumber.sendKeys(billing_contactnumber_value);
 		billingcity.sendKeys(billing_city_1);

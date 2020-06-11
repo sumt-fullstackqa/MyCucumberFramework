@@ -40,7 +40,7 @@ public class PlaceorderPortandEline {
 	@When("^enter valid portdisplayname and valid duration value$")
 	public void enter_valid_portdisplayname_and_valid_duration_value() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeordereline.uniportEntervalues(ConfigProperties.PORTDISPLAYNAMEFORELINE, ConfigProperties.DURATIONPORTFORELINE);
+		placeordereline.uniportEntervalues(ConfigProperties.DURATIONPORTFORELINE);
 	}
 
 	@And("^click on Add to cart button for adding UNI Port$")
@@ -58,7 +58,7 @@ public class PlaceorderPortandEline {
 	@When("^enter valid elinename and duration$")
 	public void enter_valid_elanname_and_duration() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeordereline.elineSelectvalues(ConfigProperties.LINENAME, ConfigProperties.DURATIONELINE);
+		placeordereline.elineSelectvalues(ConfigProperties.DURATIONELINE);
 	}
 
 	@And("^select Latency protection Class Bandwidth and Source port and select Destination location and select Destination Port$")

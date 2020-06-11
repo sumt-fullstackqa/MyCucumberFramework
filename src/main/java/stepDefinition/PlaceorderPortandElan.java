@@ -40,7 +40,7 @@ public class PlaceorderPortandElan {
 	@When("^enter valid portdisplayname and duration$")
 	public void enter_valid_portdisplayname_and_duration() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeorder.uniportSelectvalues(ConfigProperties.PORTDISPLAYNAME, ConfigProperties.DURATIONPORT);
+		placeorder.uniportSelectvalues(ConfigProperties.DURATIONPORT);
 	}
 
 	@And("^click on Add to cart button$")
@@ -53,7 +53,7 @@ public class PlaceorderPortandElan {
 	@When("^enter valid elanname and duration$")
 	public void enter_valid_elanname_and_duration() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeorder.elanSelectvalues(ConfigProperties.LANNAME, ConfigProperties.DURATIONELAN);
+		placeorder.elanSelectvalues(ConfigProperties.DURATIONELAN);
 	}
 
 	@And("^select Latency protection Class Bandwidth and port$")

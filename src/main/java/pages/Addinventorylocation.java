@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addinventorylocation {
+public class Addinventorylocation extends TestBase {
 
 	public static WebDriver driver;
 
@@ -83,10 +83,10 @@ public class Addinventorylocation {
 	
 	}
 
-	public void addnewlocationSelectvalues(String Location_Name_1, String Location_Code_1, String Location_Address_1, String Othercity_1, String Location_Zipcode_1) {
+	public void addnewlocationSelectvalues(String Location_Address_1, String Othercity_1, String Location_Zipcode_1) {
 
-		locationname.sendKeys(Location_Name_1);
-		locationcode.sendKeys(Location_Code_1);
+		inputText(locationname, getSaltString());
+		inputText(locationcode, getSaltString());
 		address.sendKeys(Location_Address_1);
 		othercity.sendKeys(Othercity_1);
 		zipcode.sendKeys(Location_Zipcode_1);

@@ -40,7 +40,7 @@ public class PlaceorderPortandETree {
 	@When("^enter valid portdisplayname and valid duration value for UNI port$")
 	public void enter_valid_portdisplayname_and_valid_duration_value_for_UNI_port() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeorderetree.uniportEntervaluesetree(ConfigProperties.PORTDISPLAYNAMEFORETREE,
+		placeorderetree.uniportEntervaluesetree(
 				ConfigProperties.DURATIONPORTFORETREE);
 	}
 
@@ -61,7 +61,7 @@ public class PlaceorderPortandETree {
 	@When("^enter valid ETreename and duration$")
 	public void enter_valid_eTreename_and_duration() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		placeorderetree.etreeSelectvalues(ConfigProperties.TREENAME, ConfigProperties.DURATIONETREE);
+		placeorderetree.etreeSelectvalues(ConfigProperties.DURATIONETREE);
 	}
 
 	@And("^select Latency protection Class Bandwidth and select Source port and select Destination location and select Destination Port$")

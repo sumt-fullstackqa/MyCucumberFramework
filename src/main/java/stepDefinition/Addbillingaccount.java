@@ -31,7 +31,7 @@ public class Addbillingaccount {
 		@When("^enter valid BillingCompany BillingAddress BillingPhoneNumber Billingcity BillingPostalCode and BillingFaxNumber$")
 		public void enter_valid_BillingCompany_BillingAddress_BillingPhoneNumber_Billingcity_BillingPostalCode_and_BillingFaxNumber() throws Exception {
 		    // Write code here that turns the phrase above into concrete actions
-			addbillingaccount.billingSelectvalues(ConfigProperties.BILLINGCOMPANY, ConfigProperties.BILLINGADDRESS, ConfigProperties.BILLINGPHONENUMBER, ConfigProperties.BILLINGCITY, ConfigProperties.BILLINGPOSTALCODE, ConfigProperties.BILLINGFAXNUMBER );
+			addbillingaccount.billingSelectvalues(ConfigProperties.BILLINGADDRESS, ConfigProperties.BILLINGPHONENUMBER, ConfigProperties.BILLINGCITY, ConfigProperties.BILLINGPOSTALCODE, ConfigProperties.BILLINGFAXNUMBER );
 		}
 		@And("^select currency country and state$")
 		public void select_country_and_roles() throws Exception {

@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class PortandETreeorderpage {
+public class PortandETreeorderpage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -102,9 +102,9 @@ public class PortandETreeorderpage {
 		 Thread.sleep(5000);
 	}
 
-	public void uniportEntervaluesetree(String portdisplay_name_1, String portduration_1) {
+	public void uniportEntervaluesetree(String portduration_1) {
 
-		portdisplayname1.sendKeys(portdisplay_name_1);
+		inputText(portdisplayname1, getSaltString());
 		portduration1.sendKeys(portduration_1);
 	}
 
@@ -123,9 +123,9 @@ public class PortandETreeorderpage {
 		Thread.sleep(7000);
 	}
 
-	public void etreeSelectvalues(String etree_name_1, String etreeduration_1) throws InterruptedException {
+	public void etreeSelectvalues(String etreeduration_1) throws InterruptedException {
 
-		etreename.sendKeys(etree_name_1);
+		inputText(etreename, getSaltString());
 		etreeduration.sendKeys(etreeduration_1);
 		Thread.sleep(7000);
 	}
