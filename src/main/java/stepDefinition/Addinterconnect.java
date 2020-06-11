@@ -40,7 +40,7 @@ public class Addinterconnect{
 	@When("^enter Interconnect ID and Circuit ID and Description$")
 	public void enter_Interconnect_ID_and_Circuit_ID_and_Description() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		addinterconnect.addinterconnectSelectvalues(ConfigProperties.INTERCONNECTID, ConfigProperties.CIRCUITID, ConfigProperties.INTERCONNECTDESCRIPTION);
+		addinterconnect.addinterconnectSelectvalues(ConfigProperties.INTERCONNECTDESCRIPTION);
 	}
 
 	@And("^click on Save button for interconnect form$")

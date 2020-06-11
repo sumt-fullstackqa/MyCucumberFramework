@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addinventoryinterconnect {
+public class Addinventoryinterconnect extends TestBase {
 
 	public static WebDriver driver;
 
@@ -91,10 +91,11 @@ public class Addinventoryinterconnect {
 		Thread.sleep(5000);
 	}
 
-	public void addinterconnectSelectvalues(String InterconnectID_1, String CircuitID_1, String Interconnect_Description_1) {
+	public void addinterconnectSelectvalues(String Interconnect_Description_1) {
 
-		interconnectid.sendKeys(InterconnectID_1);
-		circuitid.sendKeys(CircuitID_1);
+		
+		inputText(interconnectid, getSaltString());
+		inputText(circuitid, getSaltString());
 		description.sendKeys(Interconnect_Description_1);	
 	}
 	

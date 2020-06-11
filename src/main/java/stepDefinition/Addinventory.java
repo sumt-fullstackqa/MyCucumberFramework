@@ -40,7 +40,7 @@ public class Addinventory{
 	@When("^enter Device name and inventory ID and serial number and IPAddress and Inventorynotes and inventory status$")
 	public void enter_Device_name_and_inventory_ID_and_serial_number_and_IPAddress_and_Inventorynotes_and_inventory_status() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		addinventory.addinventorySelectvalues(ConfigProperties.DEVICENAME, ConfigProperties.INVENTORYID, ConfigProperties.SERIALNUMBER, ConfigProperties.IPADDRESS, ConfigProperties.INVENTORYNOTES, ConfigProperties.INVENTORYSTATUS);
+		addinventory.addinventorySelectvalues(ConfigProperties.IPADDRESS, ConfigProperties.INVENTORYNOTES, ConfigProperties.INVENTORYSTATUS);
 	}
 
 	@And("^click on Device for LOA$")

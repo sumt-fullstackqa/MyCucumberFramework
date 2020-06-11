@@ -40,7 +40,7 @@ public class Addlibrary {
 	@When("^enter device model and notes and rack size$")
 	public void enter_device_model_and_notes_and_rack_size() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		addlibrary.addlibrarySelectvalues(ConfigProperties.DEVICEMODEL, ConfigProperties.NOTES, ConfigProperties.RACKINSTALLATIONUNITSIZE);
+		addlibrary.addlibrarySelectvalues(ConfigProperties.NOTES, ConfigProperties.RACKINSTALLATIONUNITSIZE);
 	}
 
 	@And("^click on save button for Add library form$")

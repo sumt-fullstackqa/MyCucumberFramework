@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addinventorypage {
+public class Addinventorypage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -113,11 +113,11 @@ public class Addinventorypage {
 		Thread.sleep(5000);
 	}
 
-	public void addinventorySelectvalues(String Device_Name_1, String InventoryID_1, String Serialnumber_1, String IPAddress_1, String notes_1, String Inventorystatus_1) {
+	public void addinventorySelectvalues(String IPAddress_1, String notes_1, String Inventorystatus_1) {
 
-		devicename.sendKeys(Device_Name_1);
-		inventoryid.sendKeys(InventoryID_1);
-		serialno.sendKeys(Serialnumber_1);
+		inputText(devicename, getSaltString());
+		inputText(inventoryid, getSaltString());
+		inputText(serialno, getSaltString());
 		ipaddress.sendKeys(IPAddress_1);
 		inventorynotes.sendKeys(notes_1);
 		inventorystatus.sendKeys(Inventorystatus_1);

@@ -31,7 +31,7 @@ public class Raisenewticketwithcustomer {
 		@When("^enter valid ticketname and description$")
 		public void enter_valid_ticketname_and_description() throws Exception {
 		    // Write code here that turns the phrase above into concrete actions
-			addcustomerticket.customerticketSelectvalues(ConfigProperties.TICKETNAME, ConfigProperties.DESCRIPTION );
+			addcustomerticket.customerticketSelectvalues(ConfigProperties.DESCRIPTION );
 		}
 		@And("^select Ticketfor$")
 		public void select_Ticketfor() throws Exception {

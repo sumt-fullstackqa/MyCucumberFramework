@@ -11,7 +11,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = { "src/test/resources/feature" }, tags= {"@RegressionTest"}, 
+@CucumberOptions(features = { "src/test/resources/feature" }, tags= {" @smoke"}, 
                                glue = {"stepDefinition"},
                                plugin = { "html:target/reports/cucumber-preety","json:target/cucumber.json",
                             		       "com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html",  }, 

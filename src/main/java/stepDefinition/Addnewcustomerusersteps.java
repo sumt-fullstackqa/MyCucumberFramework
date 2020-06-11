@@ -31,7 +31,7 @@ public class Addnewcustomerusersteps {
 		@When("^enter valid customeruseremailaddress customeruserfirstname customerusermiddlename customeruserlastname and customeruserphonenumber$")
 		public void enter_valid_customeruseremailaddress_customeruserfirstname_customerusermiddlename_customeruserlastname_and_customerphonenumber() throws Exception {
 		    // Write code here that turns the phrase above into concrete actions
-			addcustomeruser.customeruserSelectvalues(ConfigProperties.CUSTOMEREMAILADDRESS, ConfigProperties.CUSTOMERUSERFIRSTNAME, ConfigProperties.CUSTOMERUSERMIDDLENAME, ConfigProperties.CUSTOMERUSERLASTNAME, ConfigProperties.CUSTOMERUSERPHONENUMBER);
+			addcustomeruser.customeruserSelectvalues(ConfigProperties.CUSTOMERUSERFIRSTNAME, ConfigProperties.CUSTOMERUSERMIDDLENAME, ConfigProperties.CUSTOMERUSERLASTNAME, ConfigProperties.CUSTOMERUSERPHONENUMBER);
 		}
 		@And("^select county and roles for add new customer user form$")
 		public void select_country_and_roles_for_add_new_customer_user_form() throws Exception {

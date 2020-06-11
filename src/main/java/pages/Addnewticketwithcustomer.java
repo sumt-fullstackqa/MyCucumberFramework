@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addnewticketwithcustomer {
+public class Addnewticketwithcustomer extends TestBase {
 
 	public static WebDriver driver;
 
@@ -61,9 +61,9 @@ public class Addnewticketwithcustomer {
 		Thread.sleep(5000);
 	}
 
-	public void customerticketSelectvalues(String Ticket_name_1, String description_1) {
+	public void customerticketSelectvalues(String description_1) {
 
-		ticketname.sendKeys(Ticket_name_1);
+		inputText(ticketname, getSaltString());
 		ticketdescription.sendKeys(description_1);
 
 	}

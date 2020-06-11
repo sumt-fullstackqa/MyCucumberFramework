@@ -68,9 +68,9 @@ public class Editcustomerticketpage extends TestBase {
 
 	}
 
-	public void updateDetails(String ticketname, String description) {
+	public void updateDetails(String description) {
 		waitForElement(ticketnameTextField, 2);
-		inputText(ticketnameTextField, ticketname);
+		inputText(ticketnameTextField, getSaltString());
 		waitForElement(ticketdescriptionTextarea, 2);
 		inputText(ticketdescriptionTextarea, description);
 		executionDelay(5);
@@ -94,9 +94,9 @@ public class Editcustomerticketpage extends TestBase {
 
 	}
 
-	public void cleanup(String ttname, String tdescription) {
+	public void cleanup(String tdescription) {
 		editLink();
-		updateDetails(ttname, tdescription);
+		updateDetails(tdescription);
 	}
 
 }

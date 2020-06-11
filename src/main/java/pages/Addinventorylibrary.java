@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addinventorylibrary {
+public class Addinventorylibrary extends TestBase {
 
 	public static WebDriver driver;
 
@@ -75,9 +75,9 @@ public class Addinventorylibrary {
 	
 }
 	
-	public void addlibrarySelectvalues(String Device_model_1, String Notes_1, String Racksize_1) {
+	public void addlibrarySelectvalues(String Notes_1, String Racksize_1) {
 
-		devicemodel.sendKeys(Device_model_1);
+		inputText(devicemodel, getSaltString());
 		notes.sendKeys(Notes_1);
 		racksize.sendKeys(Racksize_1);
 		

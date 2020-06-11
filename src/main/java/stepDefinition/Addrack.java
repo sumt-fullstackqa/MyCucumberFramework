@@ -40,7 +40,7 @@ public class Addrack {
 	@When("^enter model name and size and notes$")
 	public void enter_model_name_and_size_and_notes() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		addrack.addrackSelectvalues(ConfigProperties.MODELNAME, ConfigProperties.SIZE, ConfigProperties.RACKNOTES);
+		addrack.addrackSelectvalues(ConfigProperties.SIZE, ConfigProperties.RACKNOTES);
 	}
 
 	@And("^click on save button for Add Rack form$")

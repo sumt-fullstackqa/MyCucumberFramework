@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addinventoryrack {
+public class Addinventoryrack extends TestBase {
 
 	public static WebDriver driver;
 
@@ -82,9 +82,9 @@ public class Addinventoryrack {
 
 	}
 
-	public void addrackSelectvalues(String Model_name_1, String Size_1, String Racknotes_1) {
+	public void addrackSelectvalues(String Size_1, String Racknotes_1) {
 
-		modelname.sendKeys(Model_name_1);
+		inputText(modelname, getSaltString());
 		size.sendKeys(Size_1);
 		racknotes.sendKeys(Racknotes_1);
 

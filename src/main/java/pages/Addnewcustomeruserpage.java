@@ -12,9 +12,10 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class Addnewcustomeruserpage {
+public class Addnewcustomeruserpage extends TestBase {
 
 	public static WebDriver driver;
+	static String emailAddress;
 
 	@SuppressWarnings("static-access")
 	public Addnewcustomeruserpage(WebDriver driver) {
@@ -60,9 +61,9 @@ public class Addnewcustomeruserpage {
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",addnewcustomeruserbutton );
 		 Thread.sleep(5000);
 	}
-	public void customeruserSelectvalues(String customeruser_email_1, String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) {
+	public void customeruserSelectvalues(String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) {
 
-		customeruser_email.sendKeys(customeruser_email_1);
+		inputText(customeruser_email, getSaltString()+"@gmail.com");
 		customeruserfirstname.sendKeys(customeruser_firstname_1);
 		customerusermiddlename.sendKeys(customeruser_middlename_1);
 		customeruserlastname.sendKeys(customeruser_lastname_1);
