@@ -1,10 +1,10 @@
 #Author: sumit.mishra@cloudsmartz.net
 
-@Addcompany
+
 Feature: Add Company Feature
   This feature deals with Service Provider user is able to add new company.
 
- 
+ @Addcompany
   Scenario: Verify that service provider user is able to add new company
     Given login with valid credentials
     And click on the add new company button

@@ -17,7 +17,8 @@ import cucumber.api.junit.Cucumber;
         monochrome = true,
         plugin = { "html:target/reports/cucumber-preety","json:target/cucumber.json",
                    "com.cucumber.listener.ExtentCucumberFormatter:target/html/ExtentReport.html",  }, 
-        tags = {"@Addcompany,"+ "@Interconnect"}
+        tags = {"@Addcompany,"+ "@Interconnect,"+ "@Inventory,"+ "@Library,"+ "@Location,"+ "@AddNewBillingAccount,"+ "@AddNewCustomeruser,"+ "@NetworkTemplate,"+ "@AddNewuser,"+ "@AddRack,"+ "@ApproveandRejectCustomer,"+ "@AssignPort,"+ "@AssignRoletoCustomeruser,"+ "@CustomerRequestPort,"+ "@CustomerUserResetPassword,"+ "@DeactivateandActivateCustomerUser,"+ "@DeactivateandActivateUser,"+ "@EditCompany,"+ "@EditCustomerUser,"+ "@Edituser,"+ "@Exportfile,"+ "@LoginandLogout,"+ "@PortandElan,"+ "@PortandEline,"+ "@PortandETree,"+ "@RaiseNewTicket,"+ "@editticket,"+ "@Reopenclosedticket,"+ "@UserResetPassword,"+ "@viewnetworks,"+ "@Viewcompanydetails,"+ "@vieworderwithcustomer,"+ "@ViewTicketdetails,"+ "@ViewTicketReports"}
+
  )
 
 public class Runner {

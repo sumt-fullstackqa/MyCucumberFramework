@@ -1,7 +1,7 @@
 #Author: sumit.mishra@cloudsmartz.net
 Feature: Add Inventory
   This feature deals with Service Provider user is able to add Inventory.
-
+  
   @Inventory
   Scenario: Verify that service provider admin user is able to add Inventory
     Given login to seaborn with service provider admin user

@@ -1,10 +1,8 @@
 #Author: sumit.mishra@cloudsmartz.net
-
-@Interconnect
 Feature: Add Inventory Interconnect
   This feature deals with Service Provider user is able to add Interconnect.
 
-
+@Interconnect
   Scenario: Verify that service provider admin user is able to add Interconnect
     Given login to seaborn app with service provider admin user
     And click on the inventory management menu and Interconnect link
