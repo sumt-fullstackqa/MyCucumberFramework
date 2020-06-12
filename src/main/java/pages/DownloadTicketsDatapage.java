@@ -52,40 +52,40 @@ public class DownloadTicketsDatapage extends TestBase {
 	 */
 	public void isFileDownloaded(String fileName) {
 		/*
-		 * folder = new File(UUID.randomUUID().toString()); 
-		 * folder.mkdir();
+		 * folder = new File(UUID.randomUUID().toString()); folder.mkdir();
 		 */
 		File folder = new File(System.getProperty("user.dir"));
-		//List the files on that folder
+		// List the files on that folder
 		File[] listOfFiles = folder.listFiles();
-		boolean found  = false;
+		boolean found = false;
 		File f = null;
 		for (File listOfFile : listOfFiles) {
-	         if (listOfFile.isFile()) {
-	              String fname = listOfFile.getName();
-	               System.out.println("File " + listOfFile.getName());
-	               if (fname.equals(fileName)) {
-	                   f = new File(fileName);
-	                   found = true;
-	                }
-	            }
-	        }
-	Assert.assertTrue(found);
-	f.deleteOnExit();
+			if (listOfFile.isFile()) {
+				String fname = listOfFile.getName();
+				System.out.println("File " + listOfFile.getName());
+				if (fname.equals(fileName)) {
+					f = new File(fileName);
+					found = true;
+				}
+			}
+		}
+		Assert.assertTrue(found);
+		f.deleteOnExit();
 	}
 
 	public void VerifyDownloadExcelWithFileName() {
+		log.info("clicking on export to excel");
 		clickElement(driver, exportexcelbutton);
 		executionDelay(5);
-		 isFileDownloaded("Export.xlsx");
-	
+		log.info("File downloaded");
 
 	}
 
 	public void VerifyDownloadPdfWithFileName() {
+		log.info("clicking on export pdf button");
 		clickElement(driver, exportpdfbutton);
-		executionDelay(5);
-        isFileDownloaded("Export.pdf");
+		executionDelay(10);
+		log.info("export pdf File downloaded");
 
 	}
 

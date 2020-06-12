@@ -11,5 +11,3 @@ Feature: Export file in Excel and PDF format
     Then excel file downloaded with tickets data
     When I click on Export to pdf button
     Then pdf file downloaded with ticket data
-   
-
