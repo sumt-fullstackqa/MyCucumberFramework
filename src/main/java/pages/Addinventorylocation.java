@@ -83,13 +83,14 @@ public class Addinventorylocation extends TestBase {
 	
 	}
 
-	public void addnewlocationSelectvalues(String Location_Address_1, String Othercity_1, String Location_Zipcode_1) {
+	public void addnewlocationSelectvalues(String Location_Address_1, String Othercity_1, String Location_Zipcode_1) throws InterruptedException {
 
 		inputText(locationname, getSaltString());
 		inputText(locationcode, getSaltString());
 		address.sendKeys(Location_Address_1);
 		othercity.sendKeys(Othercity_1);
 		zipcode.sendKeys(Location_Zipcode_1);
+		Thread.sleep(4000);
 	}
 	
 	public void addnewlocation() {

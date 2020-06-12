@@ -58,13 +58,14 @@ public class EditUserPage {
 		WebElement mainMenuedituser = driver.findElement(By.xpath("(//div[contains(@class,'control actions-three-dot-menu')])[1]"));
 		threedottedicon.moveToElement(mainMenuedituser);
 		threedottedicon.click().build().perform();
+		Thread.sleep(4000);
 
 		WebElement subMenuedituser = driver.findElement(By.xpath("(//a[@href='#'][contains(.,'Edit')])[1]"));
 		threedottedicon.moveToElement(subMenuedituser);
 		threedottedicon.click().build().perform();
 		Thread.sleep(5000);
 	}
-	public void userUpdatevalues(String user_email_1, String user_firstname_1,String user_middlename_1, String user_lastname_1,String user_phonenumber_value ) {
+	public void userUpdatevalues(String user_email_1, String user_firstname_1,String user_middlename_1, String user_lastname_1,String user_phonenumber_value ) throws InterruptedException {
 
 		updateuser_email.clear();
 		updateuser_email.sendKeys(user_email_1);
@@ -76,13 +77,16 @@ public class EditUserPage {
 		updateuserlastname.sendKeys(user_lastname_1);
 		updateuserphonenumber.clear();
 		updateuserphonenumber.sendKeys(user_phonenumber_value);
+		Thread.sleep(4000);
 	}
-	public void userselectnewcountyandnewRole() {
+	public void userselectnewcountyandnewRole() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='country']")));
 		 dropdown1.selectByVisibleText("Aland Islands");
+		 Thread.sleep(4000);
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='roles']")));
 	dropdown2.selectByVisibleText("Billing Contact");
+	Thread.sleep(4000);
 		 
 }
 	 public void updateuser()

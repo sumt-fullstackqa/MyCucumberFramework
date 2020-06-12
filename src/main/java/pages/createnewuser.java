@@ -53,6 +53,7 @@ public class createnewuser {
 		sbloginoobj.clicksignin();
 		Thread.sleep(5000);
 		create_new_user.click();
+		Thread.sleep(4000);
 	}
 
 	public void clickonAddnewuserbutton() throws Exception {
@@ -60,13 +61,14 @@ public class createnewuser {
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",addnewuserbutton );
 		 Thread.sleep(5000);
 	}
-	public void userSelectvalues(String user_email_1, String user_firstname_1,String user_middlename_1, String user_lastname_1,String user_phonenumber_value ) {
+	public void userSelectvalues(String user_email_1, String user_firstname_1,String user_middlename_1, String user_lastname_1,String user_phonenumber_value ) throws InterruptedException {
 
 		user_email.sendKeys(user_email_1);
 		userfirstname.sendKeys(user_firstname_1);
 		usermiddlename.sendKeys(user_middlename_1);
 		userlastname.sendKeys(user_lastname_1);
 		userphonenumber.sendKeys(user_phonenumber_value);
+		Thread.sleep(4000);
 	}
 	public void userselectcountyandRoles() {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='country']")));

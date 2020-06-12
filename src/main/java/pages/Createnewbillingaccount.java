@@ -56,6 +56,7 @@ public class Createnewbillingaccount extends TestBase {
 		sbloginoobj.clicksignin();
 		Thread.sleep(5000);
 		create_new_billingaccount.click();
+		Thread.sleep(4000);
 	}
 
 	public void clickonAddnewaccountbutton() throws Exception {

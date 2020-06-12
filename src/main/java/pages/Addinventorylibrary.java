@@ -63,23 +63,25 @@ public class Addinventorylibrary extends TestBase {
 	public void Addlibraryselectdevicetypeandmanufacturername() throws InterruptedException {
 		WebElement devicetype=driver.findElement(By.xpath("//span[contains(@aria-controls,'deviceTypeId_listbox')]"));
 		devicetype.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement devicetypevalue=driver.findElement(By.xpath("(//li[@tabindex='-1'][contains(.,'Chassis')])[1]"));
 		devicetypevalue.click();
+		Thread.sleep(4000);
 		
 		WebElement manufacturername=driver.findElement(By.xpath("//span[contains(@aria-controls,'manufacturerId_listbox')]"));
 		manufacturername.click();
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		WebElement manufacturernamevalue=driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'Cisco')]"));
 		manufacturernamevalue.click();
-	
+		Thread.sleep(4000);
 }
 	
-	public void addlibrarySelectvalues(String Notes_1, String Racksize_1) {
+	public void addlibrarySelectvalues(String Notes_1, String Racksize_1) throws InterruptedException {
 
 		inputText(devicemodel, getSaltString());
 		notes.sendKeys(Notes_1);
 		racksize.sendKeys(Racksize_1);
+		Thread.sleep(4000);
 		
 	}
 	

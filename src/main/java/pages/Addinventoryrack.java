@@ -79,14 +79,16 @@ public class Addinventoryrack extends TestBase {
 		Thread.sleep(3000);
 		WebElement locationvalue = driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'CLS - Wall')]"));
 		locationvalue.click();
+		Thread.sleep(4000);
 
 	}
 
-	public void addrackSelectvalues(String Size_1, String Racknotes_1) {
+	public void addrackSelectvalues(String Size_1, String Racknotes_1) throws InterruptedException {
 
 		inputText(modelname, getSaltString());
 		size.sendKeys(Size_1);
 		racknotes.sendKeys(Racknotes_1);
+		Thread.sleep(4000);
 
 	}
 

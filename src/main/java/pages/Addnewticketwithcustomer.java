@@ -61,10 +61,11 @@ public class Addnewticketwithcustomer extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void customerticketSelectvalues(String description_1) {
+	public void customerticketSelectvalues(String description_1) throws InterruptedException {
 
 		inputText(ticketname, getSaltString());
 		ticketdescription.sendKeys(description_1);
+		Thread.sleep(4000);
 
 	}
 

@@ -91,12 +91,13 @@ public class Addinventoryinterconnect extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void addinterconnectSelectvalues(String Interconnect_Description_1) {
+	public void addinterconnectSelectvalues(String Interconnect_Description_1) throws InterruptedException {
 
 		
 		inputText(interconnectid, getSaltString());
 		inputText(circuitid, getSaltString());
 		description.sendKeys(Interconnect_Description_1);	
+		Thread.sleep(5000);
 	}
 	
 	public void addnewinterconnect() {

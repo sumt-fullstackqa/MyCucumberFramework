@@ -129,8 +129,9 @@ public class Addinventorypage extends TestBase {
 		Thread.sleep(5000);
 	}
 	
-	public void clickonDeviceforLOA() {
+	public void clickonDeviceforLOA() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", deviceforloa );
+		Thread.sleep(2000);
 	}
 
 	public void addnewinventory() {

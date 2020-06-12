@@ -54,6 +54,7 @@ public class Addnewcustomeruserpage extends TestBase {
 		sbloginoobj.clicksignin();
 		Thread.sleep(5000);
 		create_new_customeruser.click();
+		Thread.sleep(4000);
 	}
 
 	public void clickonAddnewcustomeruserbutton() throws Exception {
@@ -61,21 +62,23 @@ public class Addnewcustomeruserpage extends TestBase {
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",addnewcustomeruserbutton );
 		 Thread.sleep(5000);
 	}
-	public void customeruserSelectvalues(String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) {
+	public void customeruserSelectvalues(String customeruser_firstname_1,String customeruser_middlename_1, String customeruser_lastname_1,String customeruser_phonenumber_value ) throws InterruptedException {
 
 		inputText(customeruser_email, getSaltString()+"@gmail.com");
 		customeruserfirstname.sendKeys(customeruser_firstname_1);
 		customerusermiddlename.sendKeys(customeruser_middlename_1);
 		customeruserlastname.sendKeys(customeruser_lastname_1);
 		customeruserphonenumber.sendKeys(customeruser_phonenumber_value);
+		Thread.sleep(4000);
 	}
-	public void customeruserselectcountyandRoles() {
+	public void customeruserselectcountyandRoles() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='country']")));
 		 dropdown1.selectByVisibleText("Afghanistan");
+		 Thread.sleep(4000);
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='roles']")));
 	dropdown2.selectByVisibleText("Technical Contact");
-		 
+	Thread.sleep(4000);
 }
 	 public void createcustomeruser()
 	   {
