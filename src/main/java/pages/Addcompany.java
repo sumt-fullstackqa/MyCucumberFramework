@@ -69,7 +69,7 @@ public class Addcompany extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void companySelectvalues(String company_firstname_1, String company_lastname_1,String contactnumber_value, String corporatecontactnumber_value, String taxid_value, String postalcode_value, String address_1, String city_1) {
+	public void companySelectvalues(String company_firstname_1, String company_lastname_1,String contactnumber_value, String corporatecontactnumber_value, String taxid_value, String postalcode_value, String address_1, String city_1) throws InterruptedException {
 
 		inputText(customer_name, getSaltString());
 		inputText(customer_email, getSaltString()+"@gmail.com");
@@ -82,14 +82,15 @@ public class Addcompany extends TestBase {
 		postalcode.sendKeys(postalcode_value);
 		address.sendKeys(address_1);
 		city.sendKeys(city_1);
-		
+		Thread.sleep(5000);
 	}
-	public void companyselectcountyandstate() {
+	public void companyselectcountyandstate() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='customerCountryID']")));
 		 dropdown1.selectByVisibleText("Afghanistan");
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='customerStateID']")));
 	dropdown2.selectByVisibleText("Badakhshan");
+	Thread.sleep(3000);
 		 
 }
 	 public void createcompany()
