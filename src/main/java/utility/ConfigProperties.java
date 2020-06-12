@@ -95,4 +95,5 @@ public class ConfigProperties {
 	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
 	public static final String COUNTRYNAME = configProperties.getProperty("countyname");
 	public static final String STATENAME = configProperties.getProperty("statename");
+	public static final String FILTERINPUT = configProperties.getProperty("filterInput");
 }

@@ -3,6 +3,7 @@ package pages;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class Editcustomerticketpage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(Editcustomerticketpage.class);
 
+	@SuppressWarnings("static-access")
 	public Editcustomerticketpage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -51,19 +53,45 @@ public class Editcustomerticketpage extends TestBase {
 
 	@FindBy(how = How.CSS, using = "span#createNewCustomerTicketFormDiv_wnd_title")
 	private WebElement EditTicketScreen;
+	
+	@FindBy(how = How.XPATH, using = "(//span[contains(@class,'k-icon k-i-filter')])[8]")
+	public WebElement createdonfiltericon;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(@class,'k-animation-container')]//input[1]")
+	private WebElement filterinput;
+	
+	@FindBy(how = How.XPATH, using = "//button[contains(@class,'k-button k-primary')]")
+	private WebElement filterbutton;
+	
+	
 
-	public void editLink() {
-		clickElement(driver, actionIcon);
-		waitForElement(editactionIcon, 2);
-		clickElement(driver, editactionIcon);
-		executionDelay(5);
-		String editscreentext = EditTicketScreen.getText();
-		if (editscreentext.equalsIgnoreCase("Edit Ticket")) {
-			log.info("Edit Ticket screen is opened " + EditTicketScreen.getText());
+	public void editLink(String filtervalue) {
+		try {
+			log.info("clicking on created By filter");
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", createdonfiltericon);
+			executionDelay(2);
+			log.info("adding filter value");
+			inputText(filterinput, filtervalue);
+			log.info("clicking on filter button");
+			clickElement(driver, filterbutton);
+			executionDelay(2);
+			log.info("clicking on action 3 doticon");
+			clickElement(driver, actionIcon);
+			executionDelay(2);
+			log.info("clicking on edit icon link");
+			clickElement(driver, editactionIcon);
+			executionDelay(5);
+			String editscreentext = EditTicketScreen.getText();
+			if (editscreentext.equalsIgnoreCase("Edit Ticket")) {
+				log.info("Edit Ticket screen is opened " + EditTicketScreen.getText());
 
-		} else {
-			log.info("Edit Ticket screen not found");
+			} else {
+				log.info("Edit Ticket screen not found");
 
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}
@@ -94,8 +122,8 @@ public class Editcustomerticketpage extends TestBase {
 
 	}
 
-	public void cleanup(String tdescription) {
-		editLink();
+	public void cleanup(String tdescription, String value) {
+		editLink(value);
 		updateDetails(tdescription);
 	}
 

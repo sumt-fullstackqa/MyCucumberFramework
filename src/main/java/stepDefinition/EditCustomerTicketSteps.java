@@ -11,7 +11,7 @@ public class EditCustomerTicketSteps {
 	
 	@When("^user click on edit ticket$")
 	public void user_click_on_edit_ticket() throws Throwable {
-		editpage.editLink();
+		editpage.editLink(ConfigProperties.FILTERINPUT);
 	}
 
 	@When("^add details$")
@@ -22,7 +22,7 @@ public class EditCustomerTicketSteps {
 	@Then("^ticket updated successfully$")
 	public void ticket_updated_successfully() throws Throwable {
 		
-		editpage.cleanup(ConfigProperties.DESCRIPTION);
+		editpage.cleanup(ConfigProperties.DESCRIPTION,ConfigProperties.FILTERINPUT );
 	}
 
 	
