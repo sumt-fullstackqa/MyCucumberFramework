@@ -80,30 +80,35 @@ public class Addinventorypage extends TestBase {
 			throws InterruptedException {
 		WebElement devicemodel = driver.findElement(By.xpath("//span[contains(@aria-controls,'deviceModelName_listbox')]"));
 		devicemodel.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+		
 		WebElement devicemodelvalue = driver.findElement(By.xpath("(//li[@tabindex='-1'][contains(.,'1-A')])[1]"));
 		devicemodelvalue.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		WebElement inventorylocation = driver.findElement(By.xpath("//span[contains(@aria-controls,'location_listbox')]"));
 		inventorylocation.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+		
 		WebElement inventorylocationvalue = driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'CLS - Wall (S1WLL)')]"));
 		inventorylocationvalue.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 
 		Select vlanstartrange = new Select(driver.findElement(By.xpath("//select[@id='vlanStartRange']")));
 		vlanstartrange.selectByVisibleText("2");
+		Thread.sleep(3000);
 
 		Select vlanendrange = new Select(driver.findElement(By.xpath("//select[@id='vlanEndRange']")));
 		vlanendrange.selectByVisibleText("3");
+		Thread.sleep(3000);
 		
 		WebElement rackdropdown = driver.findElement(By.xpath("//span[contains(@aria-controls,'rackModelName_listbox')]"));
 		rackdropdown.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
+		
 		WebElement rackdropdownvalue = driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'QFX701')]"));
 		rackdropdownvalue.click();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		
 		JavascriptExecutor js = ((JavascriptExecutor) driver);
 		js.executeScript("arguments[0].scrollIntoView(true);", rackstartunit );
@@ -113,7 +118,7 @@ public class Addinventorypage extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void addinventorySelectvalues(String IPAddress_1, String notes_1, String Inventorystatus_1) {
+	public void addinventorySelectvalues(String IPAddress_1, String notes_1, String Inventorystatus_1) throws InterruptedException {
 
 		inputText(devicename, getSaltString());
 		inputText(inventoryid, getSaltString());
@@ -121,6 +126,7 @@ public class Addinventorypage extends TestBase {
 		ipaddress.sendKeys(IPAddress_1);
 		inventorynotes.sendKeys(notes_1);
 		inventorystatus.sendKeys(Inventorystatus_1);
+		Thread.sleep(5000);
 	}
 	
 	public void clickonDeviceforLOA() {

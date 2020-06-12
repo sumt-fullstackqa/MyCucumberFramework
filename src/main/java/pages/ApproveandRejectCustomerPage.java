@@ -56,7 +56,7 @@ public class ApproveandRejectCustomerPage {
 		WebElement subMenudrejectuser = driver.findElement(By.xpath("//a[@href='#'][contains(.,'Reject')]"));
 		threedottedicon.moveToElement(subMenudrejectuser);
 		threedottedicon.click().build().perform();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 	}
 
 	public void rejectcustomerreason(String Reject_Customer_Reason_1) throws InterruptedException {

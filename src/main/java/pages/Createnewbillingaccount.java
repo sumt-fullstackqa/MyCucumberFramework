@@ -63,7 +63,7 @@ public class Createnewbillingaccount extends TestBase {
 		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",addnewaccount );
 		 Thread.sleep(5000);
 	}
-	public void billingSelectvalues(String billing_address_1, String billing_contactnumber_value,String billing_city_1, String billing_postalcode_value, String billing_fax_value ) {
+	public void billingSelectvalues(String billing_address_1, String billing_contactnumber_value,String billing_city_1, String billing_postalcode_value, String billing_fax_value ) throws InterruptedException {
 
 		inputText(Billingcompany, getSaltString());
 		Billingaddress.sendKeys(billing_address_1);
@@ -71,16 +71,19 @@ public class Createnewbillingaccount extends TestBase {
 		billingcity.sendKeys(billing_city_1);
 		billingpostalcode.sendKeys(billing_postalcode_value);
 		billingfax.sendKeys(billing_fax_value);
+		Thread.sleep(5000);
 	}
-	public void billingselectcurrencycountryandstate() {
+	public void billingselectcurrencycountryandstate() throws InterruptedException {
 		Select currencydropdown = new Select(driver.findElement(By.xpath("//select[@id='billingCurrencyID']")));
 		 currencydropdown.selectByVisibleText("US Dollar(USD)");
-		 
+		 Thread.sleep(5000);
 	Select countrydropdown = new Select(driver.findElement(By.xpath("//select[@id='billingCountryID']")));
 	countrydropdown.selectByVisibleText("Afghanistan");
+	Thread.sleep(5000);
 	
 	Select statedropdown = new Select(driver.findElement(By.xpath("//select[@id='billingStateID']")));
 	statedropdown.selectByVisibleText("Badakhshan");
+	Thread.sleep(5000);
 		 
 }
 	 public void createbillingaccount()
