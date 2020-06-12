@@ -51,7 +51,7 @@ public class Addnewticketwithcustomer extends TestBase {
 		sbloginoobj.clicksignin();
 		Thread.sleep(20000);
 		add_new_ticketwithcustomer.click();
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		
 	}
 

@@ -15,11 +15,12 @@ import utility.ConfigProperties;
 public class Reopenticketsteps {
 	
 	ReopenTicketpage reopenpage = new ReopenTicketpage(TestBase.driver);
-
-	@When("^user clicks on edit icon and select close Ticket$")
-	public void user_clicks_on_edit_icon_and_select_close_Ticket() throws Throwable {
+	
+	@When("^user clicks on action icon and select close Ticket$")
+	public void user_clicks_on_action_icon_and_select_close_Ticket() throws Throwable {
 		reopenpage.clickOnCloseTicket();
 	}
+
 
 	@Then("^ticket closed successfully and move to closed ticket tab$")
 	public void ticket_closed_successfully_and_move_to_closed_ticket_tab() throws Throwable {

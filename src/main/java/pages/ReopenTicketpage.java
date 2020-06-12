@@ -25,6 +25,7 @@ public class ReopenTicketpage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(ReopenTicketpage.class);
 
+	@SuppressWarnings("static-access")
 	public ReopenTicketpage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
@@ -34,7 +35,7 @@ public class ReopenTicketpage extends TestBase {
 	@FindBy(how = How.CSS, using = "div.control.actions-three-dot-menu")
 	private List<WebElement> actionIcon;
 
-	@FindBy(how = How.CSS, using = "div.is-open>ul>li:nth-child(3)>a")
+	@FindBy(how = How.CSS, using = "div.is-open>ul>li:nth-child(2)>a>span")
 	private WebElement closeticketIcon;
 
 	@FindBy(how = How.CSS, using = "span#closeCustomerTicketFormDiv_wnd_title")
@@ -76,53 +77,78 @@ public class ReopenTicketpage extends TestBase {
 
 
 	public void clickOnCloseTicket() {
-		actionIcon.get(0).click();
-		waitForElement(closeticketIcon, 2);
-		clickElement(driver, closeticketIcon);
-		executionDelay(5);
-		String closescreentitle = closeTicketScreenTitle.getText();
-		if (closescreentitle.contains("Close Ticket")) {
-			log.info("close ticket screen is opened " + closescreentitle);
+		try {
+			log.info("clicking on action icon");
+			actionIcon.get(0).click();
+			executionDelay(2);
+			log.info("clicking on closed ticket");
+			clickElement(driver, closeticketIcon);
+			executionDelay(5);
+			String closescreentitle = closeTicketScreenTitle.getText();
+			if (closescreentitle.contains("Close Ticket")) {
+				log.info("close ticket screen is opened " + closescreentitle);
 
-		} else {
-			log.info("close Ticket screen not found");
+			} else {
+				log.info("close Ticket screen not found");
 
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 
 	}
 
 	public void addCloseTicketDetails(String addcomment) {
-		inputText(commentTextarea, addcomment);
-		waitForElementToBeClickable(reasondropdown, driver, 2);
-		clickElement(driver, reasondropdown);
-		waitForElementToBeVisible(reasondropdownvalue, driver, 2);
-		clickElement(driver, reasondropdownvalue);
-		executionDelay(3);
-		clickElement(driver, closeButton);
-		executionDelay(10);
+		try {
+			log.info("adding comments for closed ticket");
+			inputText(commentTextarea, addcomment);
+			waitForElementToBeClickable(reasondropdown, driver, 2);
+			clickElement(driver, reasondropdown);
+			waitForElementToBeVisible(reasondropdownvalue, driver, 2);
+			clickElement(driver, reasondropdownvalue);
+			executionDelay(3);
+			log.info("clicking on closed Button");
+			clickElement(driver, closeButton);
+			executionDelay(10);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
 	public void clickOnCloseTickettab() {
-		clickElement(driver, closeticketTab);
-		executionDelay(3);
-		String headingtext = closeticketheading.getText();
-		 if(headingtext.contains("Closed Tickets")) {
-			 log.info("Closed Ticket screen is opened "+headingtext);
-		 }else {
-			 log.info("Error in closed ticket ");
-		 }	
+		try {
+			log.info("clicking on close Ticket Tab");
+			clickElement(driver, closeticketTab);
+			executionDelay(3);
+			String headingtext = closeticketheading.getText();
+			 if(headingtext.contains("Closed Tickets")) {
+				 log.info("Closed Ticket screen is opened "+headingtext);
+			 }else {
+				 log.info("Error in closed ticket ");
+			 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}	
 		
 	}
 	
 	public void clickOnReopenticket() {
-		actionIcon.get(0).click();
-		waitForElementToBeVisible(reopenicon, driver, 2);
-		clickElement(driver, reopenicon);
-		waitForElementToBeVisible(Okbutton, driver, 2);
-		clickElement(driver, Okbutton);
-		executionDelay(5);
-		notifymessage(reopensuccessmessage, "updated successfully");
+		try {
+			log.info("clicking on action icon 3dot ");
+			actionIcon.get(0).click();
+			waitForElementToBeVisible(reopenicon, driver, 2);
+			log.info("clicking on reopen icon ");
+			clickElement(driver, reopenicon);
+			waitForElementToBeVisible(Okbutton, driver, 2);
+			log.info("clicking on ok button ");
+			clickElement(driver, Okbutton);
+			executionDelay(5);
+			notifymessage(reopensuccessmessage, "updated successfully");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	 
 	 }
 
