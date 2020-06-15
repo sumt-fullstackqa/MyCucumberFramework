@@ -28,6 +28,7 @@ public class DownloadTicketsDatapage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(DownloadTicketsDatapage.class);
 
+	@SuppressWarnings("static-access")
 	public DownloadTicketsDatapage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);

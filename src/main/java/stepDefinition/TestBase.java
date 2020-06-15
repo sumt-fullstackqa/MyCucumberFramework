@@ -142,6 +142,18 @@ public class TestBase {
 
 	}
 
+	public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
+		element.sendKeys(value);
+
+	}
+
+	public static void ClickOn(WebDriver driver, WebElement element, int timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
+		element.click();
+
+	}
+
 	public static void clickElement(WebDriver driver, WebElement element) {
 		element.click();
 
@@ -186,9 +198,9 @@ public class TestBase {
 				WebDriverManager.chromedriver().setup();
 				driver = new ChromeDriver();
 				driver.manage().window().maximize();
-				
-				//ChromeBrowser chrome = ChromeBrowser.class.newInstance();
-				//return chrome.getChromeDriver(chrome.getChromeCapabilities());
+
+				// ChromeBrowser chrome = ChromeBrowser.class.newInstance();
+				// return chrome.getChromeDriver(chrome.getChromeCapabilities());
 
 			case Firefox:
 				FirefoxBrowser firefox = FirefoxBrowser.class.newInstance();
@@ -248,7 +260,6 @@ public class TestBase {
 		Select dropdownlist = new Select(countryIdDropdown);
 		dropdownlist.selectByVisibleText(value);
 	}
-	
 
 	public static boolean isElementDisplayed(WebElement element) {
 		try {
@@ -266,6 +277,7 @@ public class TestBase {
 			new WebDriverWait(driver, timeout).until(ExpectedConditions.not(ExpectedConditions.visibilityOf(element)));
 		}
 	}
+
 	public static String getSaltString() {
 		String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
 		StringBuilder salt = new StringBuilder();
@@ -278,7 +290,7 @@ public class TestBase {
 		return saltStr;
 
 	}
-	
+
 	public static WebDriver setup(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -300,7 +312,6 @@ public class TestBase {
 		return driver;
 
 	}
-
 
 	@Before
 	public void beforeScenario(Scenario scenario) {

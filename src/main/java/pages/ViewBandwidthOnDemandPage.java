@@ -25,6 +25,7 @@ public class ViewBandwidthOnDemandPage extends TestBase {
 
 	Logger log = LoggerHelper.getLogger(ViewBandwidthOnDemandPage.class);
 
+	@SuppressWarnings("static-access")
 	public ViewBandwidthOnDemandPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
