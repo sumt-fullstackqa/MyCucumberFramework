@@ -49,10 +49,9 @@ public class Addnewticketwithcustomer extends TestBase {
 	public void clickOnAddNewticketwithcustomer() throws Exception {
 		sbloginoobj.Login(ConfigProperties.CUSTOMERUSEREMAIL, ConfigProperties.CUSTOMERPASSWORD);
 		sbloginoobj.clicksignin();
-		Thread.sleep(20000);
-		add_new_ticketwithcustomer.click();
-		Thread.sleep(10000);
-		
+		ClickOn(driver, add_new_ticketwithcustomer, 15);
+		executionDelay(10);
+
 	}
 
 	public void clickonRaiseticketbutton() throws Exception {
