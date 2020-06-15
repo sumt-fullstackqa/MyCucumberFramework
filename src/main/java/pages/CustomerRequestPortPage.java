@@ -1,3 +1,7 @@
+/**
+ * 
+ */
+
 package pages;
 
 import org.openqa.selenium.By;
@@ -12,7 +16,13 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class CustomerRequestPortPage {
+/**
+ * @author sumit.mishra
+ *
+ */
+
+
+public class CustomerRequestPortPage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -51,18 +61,20 @@ public class CustomerRequestPortPage {
 	}
 	public void requestportselectlocationandPorttypeandBillingaccount() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='datacenter']")));
-		 dropdown1.selectByValue("15");
+		 dropdown1.selectByValue("4");
+		 Thread.sleep(7000);
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='portType']")));
-	dropdown2.selectByValue("1");
+	dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 10Gb");
+	Thread.sleep(4000);
 	
 	Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='billingAccountId']")));
 	dropdown3.selectByValue("212378");
 	Thread.sleep(5000);		 
 }
-	public void requestportSelectvalues(String port_displayname_1) throws InterruptedException {
-
-		portdisplaynamefield.sendKeys(port_displayname_1);
+	public void requestportSelectvalues() throws InterruptedException {
+		
+		inputText(portdisplaynamefield, getSaltString());
 		Thread.sleep(3000);	
 	}
 	 public void requestport()

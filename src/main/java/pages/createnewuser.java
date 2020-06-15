@@ -70,12 +70,14 @@ public class createnewuser {
 		userphonenumber.sendKeys(user_phonenumber_value);
 		Thread.sleep(4000);
 	}
-	public void userselectcountyandRoles() {
+	public void userselectcountyandRoles() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='country']")));
 		 dropdown1.selectByVisibleText("Afghanistan");
+		 Thread.sleep(4000);
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='roles']")));
 	dropdown2.selectByVisibleText("Technical Contact");
+	Thread.sleep(4000);
 		 
 }
 	 public void createuser()

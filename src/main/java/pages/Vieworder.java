@@ -33,6 +33,7 @@ public class Vieworder {
 		Actions actions = new Actions(driver);
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Manage Orders']"));
 		actions.moveToElement(mainMenu);
+		Thread.sleep(4000);
 
 		WebElement subMenu = driver.findElement(By.xpath("//span[contains(text(),'Order List')]"));
 		actions.moveToElement(subMenu);
@@ -45,6 +46,7 @@ public class Vieworder {
 		WebElement mainMenu1 = driver.findElement(By.xpath("(//div[@class='control actions-three-dot-menu'][contains(.,'View Details')])[1]"));
 		actions1.moveToElement(mainMenu1);
 		actions1.click().build().perform();
+		Thread.sleep(4000);
 
 		WebElement subMenu1 = driver.findElement(By.xpath("//div[@class='box three-dot-menu is-open']//span[contains(text(),'View Details')]"));
 		actions1.moveToElement(subMenu1);

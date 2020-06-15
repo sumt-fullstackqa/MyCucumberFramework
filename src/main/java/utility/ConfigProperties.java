@@ -81,7 +81,6 @@ public class ConfigProperties {
 	public static final String DURATIONETREE = configProperties.getProperty("DurationETree");
 	public static final String POREFERENCEIDETREE = configProperties.getProperty("PoreferenceIDETree");
 	public static final String COMMENTSSPECIALINSTRUCTIONETREE = configProperties.getProperty("CommentsspecialInstructionETree");
-	public static final String PORTDISPLAYNAMEFORREQUESTPORT = configProperties.getProperty("PortDisplayNameforRequestPort");
 	public static final String UPDATEEMAILADDRESS = configProperties.getProperty("updateemailaddress");
 	public static final String UPDATEFIRSTNAME = configProperties.getProperty("updatefirstname");
 	public static final String UPDATEMIDDLENAME = configProperties.getProperty("updatemiddlename");
@@ -90,7 +89,6 @@ public class ConfigProperties {
 	public static final String TEMPLATEDURATION = configProperties.getProperty("TemplateDuration");
 	public static final String TEMPLATEDESC = configProperties.getProperty("TemplateDescription");
 	public static final String UPDATEPHONENUMBER = configProperties.getProperty("updatephonenumber");
-	public static final String PORTDISPLAYNAMEFORASSIGNPORT = configProperties.getProperty("PortDisplayNameforAssignPort");
 	public static final String REJECTREASON = configProperties.getProperty("Rejectreason");
 	public static final String FILTERFIELD = configProperties.getProperty("Filterfield");
 	public static final String COUNTRYNAME = configProperties.getProperty("countyname");

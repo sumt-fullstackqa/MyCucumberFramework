@@ -1,3 +1,8 @@
+/**
+ * 
+ */
+
+
 package pages;
 
 import org.openqa.selenium.By;
@@ -12,7 +17,12 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class AssignRoletoCustomeruserpage {
+/**
+ * @author sumit.mishra
+ *
+ */
+
+public class AssignRoletoCustomeruserpage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -25,7 +35,7 @@ public class AssignRoletoCustomeruserpage {
 	@FindBy(how = How.XPATH, using = "//a[@class='User Management']")
 	public WebElement customerusermanagementmenu;
 
-	@FindBy(how = How.XPATH, using = "(//a[@href='#'][contains(.,'Assign Roles')])[6]")
+	@FindBy(how = How.XPATH, using = "//a[contains(text(),'Assign Roles')]")
 	public WebElement assignrolestab;
 
 	@FindBy(how = How.XPATH, using = "(//input[contains(@type,'checkbox')])[4]")
@@ -50,22 +60,23 @@ public class AssignRoletoCustomeruserpage {
 				.findElement(By.xpath("(//div[contains(@class,'control actions-three-dot-menu')])[1]"));
 		threedottedicon.moveToElement(mainMenuassignroles);
 		threedottedicon.click().build().perform();
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 
 		WebElement subMenuassignroles = driver.findElement(By.xpath("(//a[@href='#'][contains(.,'Assign Roles')])[1]"));
 		threedottedicon.moveToElement(subMenuassignroles);
 		threedottedicon.click().build().perform();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 	}
 
 	public void clickonassignrolestab() throws Exception {
-
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", assignrolestab);
+		
+      	ClickOn(driver, assignrolestab, 5);
 		Thread.sleep(5000);
 	}
 
 	public void clickoncustomeradminrolecheckbox() throws Exception {
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", customeradmincheckbox);
+		
+	    ClickOn(driver, customeradmincheckbox, 5);
 		Thread.sleep(5000);
 	}
 

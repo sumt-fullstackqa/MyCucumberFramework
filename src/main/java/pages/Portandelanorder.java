@@ -67,6 +67,7 @@ public class Portandelanorder extends TestBase {
 		Actions actions = new Actions(driver);
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Manage Orders']"));
 		actions.moveToElement(mainMenu);
+		Thread.sleep(4000);
 
 		WebElement subMenu = driver.findElement(By.xpath("//span[contains(text(),'Place an Order')]"));
 		actions.moveToElement(subMenu);
@@ -79,6 +80,7 @@ public class Portandelanorder extends TestBase {
 		WebElement mainMenu1 = driver.findElement(By.xpath("(//div[contains(@class,'control actions-three-dot-menu')])[1]"));
 		actions1.moveToElement(mainMenu1);
 		actions1.click().build().perform();
+		Thread.sleep(4000);
 
 		WebElement subMenu1 = driver.findElement(By.xpath("(//a[@class='grid_mcadd_icon'][contains(.,'Add')])[1]"));
 		actions1.moveToElement(subMenu1);
@@ -93,16 +95,18 @@ public class Portandelanorder extends TestBase {
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");
+		Thread.sleep(4000);
 
 		Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='uniCapacity']")));
 		dropdown3.selectByVisibleText("100");
 		 Thread.sleep(5000);
 	}
 
-	public void uniportSelectvalues(String portduration_1) {
+	public void uniportSelectvalues(String portduration_1) throws InterruptedException {
 
 		inputText(portdisplayname, getSaltString());
 		portduration.sendKeys(portduration_1);
+		Thread.sleep(4000);
 	}
 
 	public void adduniporttocart() throws InterruptedException {
@@ -110,32 +114,39 @@ public class Portandelanorder extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void elanSelectvalues(String elanduration_1) {
+	public void elanSelectvalues(String elanduration_1) throws InterruptedException {
 
 		inputText(elanname, getSaltString());
 		elanduration.sendKeys(elanduration_1);
+		Thread.sleep(4000);
 	}
 
-	public void elanselectlatencyprotectionclassbandwidthandport() {
+	public void elanselectlatencyprotectionclassbandwidthandport() throws InterruptedException {
 		Select dropdown4 = new Select(driver.findElement(By.xpath("//select[@id='privateLanLTNCY']")));
 		dropdown4.selectByVisibleText("Best Effort");
+		Thread.sleep(4000);
 
 		Select dropdown5 = new Select(driver.findElement(By.xpath("//select[@id='privateLanPRTN']")));
 		dropdown5.selectByVisibleText("Protected");
+		Thread.sleep(4000);
 
 		Select dropdown6 = new Select(driver.findElement(By.xpath("//select[@id='privateLanSLA']")));
 		dropdown6.selectByVisibleText("Standard");
+		Thread.sleep(4000);
 
 		Select dropdown7 = new Select(driver.findElement(By.xpath("//select[@id='privateLanBandwidth']")));
 		dropdown7.selectByVisibleText("5");
+		Thread.sleep(4000);
 
 		Select dropdown8 = new Select(driver.findElement(By.xpath("//select[@id='privateLanDestPort']")));
 		dropdown8.selectByValue("0");
+		Thread.sleep(4000);
 
 	}
 
-	public void addelantocart() {
+	public void addelantocart() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", addtocartelan);
+		Thread.sleep(4000);
 	}
 
 	public void clickOnCartmainbuttonandPlaceorderbutton() throws InterruptedException {
@@ -144,10 +155,11 @@ public class Portandelanorder extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void referenceandcommentsSelectvalues(String poreference_1, String comments_1) {
+	public void referenceandcommentsSelectvalues(String poreference_1, String comments_1) throws InterruptedException {
 
 		referenceid.sendKeys(poreference_1);
 		comments.sendKeys(comments_1);
+		Thread.sleep(4000);
 	}
 
 	public void orderselectprimarycontact247contactandtechnicalcontact() {

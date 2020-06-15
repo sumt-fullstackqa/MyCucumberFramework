@@ -70,6 +70,7 @@ public class PortandETreeorderpage extends TestBase {
 		Actions actions = new Actions(driver);
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Manage Orders']"));
 		actions.moveToElement(mainMenu);
+		Thread.sleep(4000);
 
 		WebElement subMenu = driver.findElement(By.xpath("//span[contains(text(),'Place an Order')]"));
 		actions.moveToElement(subMenu);
@@ -82,6 +83,7 @@ public class PortandETreeorderpage extends TestBase {
 		WebElement mainMenu1 = driver.findElement(By.xpath("(//div[contains(@class,'control actions-three-dot-menu')])[1]"));
 		actions1.moveToElement(mainMenu1);
 		actions1.click().build().perform();
+		Thread.sleep(4000);
 
 		WebElement subMenu1 = driver.findElement(By.xpath("(//a[@class='grid_mcadd_icon'][contains(.,'Add')])[1]"));
 		actions1.moveToElement(subMenu1);
@@ -96,16 +98,18 @@ public class PortandETreeorderpage extends TestBase {
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");
+		Thread.sleep(4000);
 
 		Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='uniCapacity']")));
 		dropdown3.selectByVisibleText("100");
 		 Thread.sleep(5000);
 	}
 
-	public void uniportEntervaluesetree(String portduration_1) {
+	public void uniportEntervaluesetree(String portduration_1) throws InterruptedException {
 
 		inputText(portdisplayname1, getSaltString());
 		portduration1.sendKeys(portduration_1);
+		Thread.sleep(4000);
 	}
 
 	public void clickonadduniporttocartetree() throws InterruptedException {
@@ -160,8 +164,9 @@ public class PortandETreeorderpage extends TestBase {
 		Thread.sleep(3000);
 	}
 
-	public void addetreetocart() {
+	public void addetreetocart() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", addtocartetree);
+		Thread.sleep(4000);
 	}
 
 	public void clickOnCartmainmenubuttonandPlaceorderbuttonetree() throws InterruptedException {
@@ -170,10 +175,11 @@ public class PortandETreeorderpage extends TestBase {
 		Thread.sleep(5000);
 	}
 
-	public void referenceandcommentsEntertvaluesetree(String poreference_1, String comments_1) {
+	public void referenceandcommentsEntertvaluesetree(String poreference_1, String comments_1) throws InterruptedException {
 
 		referenceid1.sendKeys(poreference_1);
 		comments1.sendKeys(comments_1);
+		Thread.sleep(4000);
 	}
 
 	public void orderselectprimarycontact247contactandtechnicalcontactEtreeorder() {

@@ -14,6 +14,7 @@ import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -153,7 +154,13 @@ public class TestBase {
 		element.click();
 
 	}
-
+	public static void JSClickOn(WebDriver driver, WebElement element, int timeout) {
+		new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();",element );
+	
+	}
+	
+	
 	public static void clickElement(WebDriver driver, WebElement element) {
 		element.click();
 

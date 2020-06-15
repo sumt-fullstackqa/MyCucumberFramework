@@ -37,7 +37,7 @@ public class AssignPortSteps{
 	@When("^enter Port display name for assign port$")
 	public void enter_Port_display_name_for_assign_port() throws Exception {
 		// Write code here that turns the phrase above into concrete actions
-		assignport.AssignportSelectvalues(ConfigProperties.PORTDISPLAYNAMEFORASSIGNPORT);
+		assignport.AssignportSelectvalues();
 	}
 	@And("^click on add button$")
 	public void click_on_add_button() throws Exception {

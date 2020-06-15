@@ -36,7 +36,7 @@ public class CustomerRequestPortSteps {
 		@When("^enter port display name$")
 		public void enter_port_display_name() throws Exception {
 		    // Write code here that turns the phrase above into concrete actions
-			requestport.requestportSelectvalues(ConfigProperties.PORTDISPLAYNAMEFORREQUESTPORT);
+			requestport.requestportSelectvalues();
 		}
 		
 		@And("^click on the save button for requesting port$")

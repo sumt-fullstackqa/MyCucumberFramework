@@ -1,3 +1,7 @@
+/**
+ * 
+ */
+
 package pages;
 
 import org.openqa.selenium.By;
@@ -12,6 +16,11 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
+/**
+ * @author sumit.mishra
+ *
+ */
+
 public class Addinventorylibrary extends TestBase {
 
 	public static WebDriver driver;
@@ -21,22 +30,22 @@ public class Addinventorylibrary extends TestBase {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(how = How.XPATH, using = " //a[@class='btn']")
 	public WebElement addlibrary;
-	
+
 	@FindBy(how = How.XPATH, using = "//input[@id='libraryDeviceName']")
 	public WebElement devicemodel;
-	
+
 	@FindBy(how = How.XPATH, using = "//input[@id='rackUnitSize']")
 	public WebElement racksize;
-	
+
 	@FindBy(how = How.XPATH, using = "//textarea[@id='deviceNotes']")
 	public WebElement notes;
 
 	@FindBy(how = How.XPATH, using = "//input[@id='addNewLibBtn']")
 	public WebElement save;
-	
+
 	seabornlogin sbloginoobj = new seabornlogin(TestBase.driver);
 
 	public void clickOnInventorymanagementandLibrary() throws Exception {
@@ -47,47 +56,48 @@ public class Addinventorylibrary extends TestBase {
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Inventory Management']"));
 		actions.moveToElement(mainMenu);
 		actions.click().build().perform();
+		Thread.sleep(5000);
 
-		WebElement subMenu = driver.findElement(By.xpath("//a[@href='http://seaborn.cloudsmartz.com/group/service-provider/inventory-management/library'][contains(.,'Library')]"));
+		WebElement subMenu = driver.findElement(By.xpath(
+				"//a[@href='http://seaborn.cloudsmartz.com/group/service-provider/inventory-management/library'][contains(.,'Library')]"));
 		actions.moveToElement(subMenu);
 		actions.click().build().perform();
 		Thread.sleep(7000);
 	}
 
-
 	public void clickonaddlibrary() throws InterruptedException {
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", addlibrary);
-		Thread.sleep(7000);	
+
+		JSClickOn(driver, addlibrary, 5);
+		Thread.sleep(7000);
 	}
 
 	public void Addlibraryselectdevicetypeandmanufacturername() throws InterruptedException {
-		WebElement devicetype=driver.findElement(By.xpath("//span[contains(@aria-controls,'deviceTypeId_listbox')]"));
+		WebElement devicetype = driver.findElement(By.xpath("//span[contains(@aria-controls,'deviceTypeId_listbox')]"));
 		devicetype.click();
 		Thread.sleep(4000);
-		WebElement devicetypevalue=driver.findElement(By.xpath("(//li[@tabindex='-1'][contains(.,'Chassis')])[1]"));
+		WebElement devicetypevalue = driver.findElement(By.xpath("(//li[@tabindex='-1'][contains(.,'Chassis')])[1]"));
 		devicetypevalue.click();
 		Thread.sleep(4000);
-		
-		WebElement manufacturername=driver.findElement(By.xpath("//span[contains(@aria-controls,'manufacturerId_listbox')]"));
+
+		WebElement manufacturername = driver
+				.findElement(By.xpath("//span[contains(@aria-controls,'manufacturerId_listbox')]"));
 		manufacturername.click();
 		Thread.sleep(4000);
-		WebElement manufacturernamevalue=driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'Cisco')]"));
+		WebElement manufacturernamevalue = driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'Cisco')]"));
 		manufacturernamevalue.click();
 		Thread.sleep(4000);
-}
-	
+	}
+
 	public void addlibrarySelectvalues(String Notes_1, String Racksize_1) throws InterruptedException {
 
 		inputText(devicemodel, getSaltString());
-		notes.sendKeys(Notes_1);
-		racksize.sendKeys(Racksize_1);
+		sendKeys(driver, notes, 5, Notes_1);
+		sendKeys(driver, racksize, 5, Racksize_1);
 		Thread.sleep(4000);
-		
-	}
-	
-	 public void addnewlibrary()
-	   {
-		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();", save);
-}
-}
 
+	}
+
+	public void addnewlibrary() {
+		JSClickOn(driver, save, 5);
+	}
+}

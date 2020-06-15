@@ -1,3 +1,4 @@
+
 package stepDefinition;
 import configreader.ObjectRepo;
 import cucumber.api.java.en.And;
@@ -6,7 +7,7 @@ import cucumber.api.java.en.Then;
 import pages.AssignRoletoCustomeruserpage;
 
 
-public class AssignRoletoCustomeruserSteps {
+public class AssignRoletoCustomeruserSteps  {
 	
 	AssignRoletoCustomeruserpage assignroletocustomeruser=new AssignRoletoCustomeruserpage(TestBase.driver);
 	// TODO Auto-generated constructor stub

@@ -1,3 +1,7 @@
+/**
+ * 
+ */
+
 package pages;
 
 import org.openqa.selenium.By;
@@ -13,7 +17,12 @@ import org.openqa.selenium.support.ui.Select;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
-public class AssignPortPage {
+/**
+ * @author sumit.mishra
+ *
+ */
+
+public class AssignPortPage extends TestBase {
 
 	public static WebDriver driver;
 
@@ -45,6 +54,7 @@ public class AssignPortPage {
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Inventory Management']"));
 		actions.moveToElement(mainMenu);
 		actions.click().build().perform();
+		Thread.sleep(5000);
 
 		WebElement subMenu = driver.findElement(By.xpath(
 				"//a[@href='http://seaborn.cloudsmartz.com/group/service-provider/manage-port'][contains(.,'Manage Port')]"));
@@ -69,15 +79,15 @@ public class AssignPortPage {
 
 	public void AssignPortselectlocationandinventoryandportandbillingaccount() throws InterruptedException {
 		Select location = new Select(driver.findElement(By.xpath("//select[@id='Data_Center_Code']")));
-		location.selectByVisibleText("POP - 165 Halsey");
+		location.selectByValue("4");
 		Thread.sleep(3000);
 
 		Select inventory = new Select(driver.findElement(By.xpath("//select[@id='Device']")));
-		inventory.selectByVisibleText("MMR-3 MMP 095 (INV-NJ7-MMR-3 MMP 095.02.01 Panel 5 Mod 5)");
+		inventory.selectByValue("147");
 		Thread.sleep(3000);
 
 		Select port = new Select(driver.findElement(By.xpath("//select[@id='Port']")));
-		port.selectByValue("3023");
+		port.selectByIndex(1);
 		Thread.sleep(3000);
 
 		Select billingaccount = new Select(driver.findElement(By.xpath("//select[@id='billingAccountId']")));
@@ -86,8 +96,9 @@ public class AssignPortPage {
 
 	}
 
-	public void AssignportSelectvalues(String port_displayname_1) throws InterruptedException {
-		portdisplaynamefield.sendKeys(port_displayname_1);
+	public void AssignportSelectvalues() throws InterruptedException {
+		
+		inputText(portdisplaynamefield, getSaltString());
 		Thread.sleep(3000);
 	}
 

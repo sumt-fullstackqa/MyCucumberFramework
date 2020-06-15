@@ -1,3 +1,7 @@
+/**
+ * 
+ */
+
 package pages;
 
 import org.openqa.selenium.By;
@@ -11,6 +15,11 @@ import org.openqa.selenium.support.ui.Select;
 
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
+
+/**
+ * @author sumit.mishra
+ *
+ */
 
 public class Addcompany extends TestBase {
 
@@ -64,29 +73,28 @@ public class Addcompany extends TestBase {
 	public void clickOnAddNewCompany() throws Exception {
 		sbloginoobj.Login(ConfigProperties.ADMINUSEREMAIL, ConfigProperties.ADMINPASSWORD);
 		sbloginoobj.clicksignin();
-		Thread.sleep(5000);
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();",add_new_company );
-		Thread.sleep(5000);
+	    ClickOn(driver, add_new_company, 5);	
 	}
 
 	public void companySelectvalues(String company_firstname_1, String company_lastname_1,String contactnumber_value, String corporatecontactnumber_value, String taxid_value, String postalcode_value, String address_1, String city_1) throws InterruptedException {
 
+		waitForElementToBeVisible(customer_name, driver, 4000);
 		inputText(customer_name, getSaltString());
 		inputText(customer_email, getSaltString()+"@gmail.com");
 		emailAddress = customer_email.getAttribute("value");
-		inputText(firstname, company_firstname_1);
-		inputText(lastname, company_lastname_1);
-		inputText(contactnumber, contactnumber_value);
-		inputText(corporatecontactnumber, corporatecontactnumber_value);
-		TaxID.sendKeys(taxid_value);
-		postalcode.sendKeys(postalcode_value);
-		address.sendKeys(address_1);
-		city.sendKeys(city_1);
-		Thread.sleep(5000);
+	     sendKeys(driver, firstname, 5, company_firstname_1);
+	     sendKeys(driver, lastname, 5, company_lastname_1);
+	     sendKeys(driver, contactnumber, 5, contactnumber_value);
+	     sendKeys(driver, corporatecontactnumber, 5, corporatecontactnumber_value);
+	     sendKeys(driver, TaxID, 5, taxid_value);
+	     sendKeys(driver, postalcode, 5, postalcode_value);
+	     sendKeys(driver, address, 5, address_1);
+	     sendKeys(driver, city, 5, city_1);	
 	}
 	public void companyselectcountyandstate() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='customerCountryID']")));
 		 dropdown1.selectByVisibleText("Afghanistan");
+		 Thread.sleep(4000);
 		 
 	Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='customerStateID']")));
 	dropdown2.selectByVisibleText("Badakhshan");
@@ -95,7 +103,7 @@ public class Addcompany extends TestBase {
 }
 	 public void createcompany()
 	   {
-		 ((JavascriptExecutor) driver).executeScript("arguments[0].click();",save );
+		ClickOn(driver, save, 5);
 }	
 	
 }

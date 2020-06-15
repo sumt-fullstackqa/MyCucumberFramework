@@ -52,6 +52,7 @@ public class Viewreportingtabs {
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Ticket Management']"));
 		actions.moveToElement(mainMenu);
 		actions.click().build().perform();
+		Thread.sleep(4000);
 
 		WebElement subMenu = driver.findElement(By.xpath("//a[contains(.,'Reports')]"));
 		actions.moveToElement(subMenu);
