@@ -91,15 +91,11 @@ public class Portandelanorder extends TestBase {
 	public void uniportselectlocationportandcapacity() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='uniLocation']")));
 		 dropdown1.selectByValue("4");
-		 Thread.sleep(5000);
+		 Thread.sleep(12000);
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");
 		Thread.sleep(4000);
-
-		Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='uniCapacity']")));
-		dropdown3.selectByVisibleText("100");
-		 Thread.sleep(5000);
 	}
 
 	public void uniportSelectvalues(String portduration_1) throws InterruptedException {
@@ -162,7 +158,7 @@ public class Portandelanorder extends TestBase {
 		Thread.sleep(4000);
 	}
 
-	public void orderselectprimarycontact247contactandtechnicalcontact() {
+	public void orderselectprimarycontact247contactandtechnicalcontact() throws InterruptedException {
 		Select dropdown9 = new Select(driver.findElement(By.xpath("//select[@id='primaryContact']")));
 		dropdown9.selectByVisibleText(" Lohit Kumar ");
 
@@ -171,6 +167,7 @@ public class Portandelanorder extends TestBase {
 
 		Select dropdown11 = new Select(driver.findElement(By.xpath("//select[@id='technicalContact']")));
 		dropdown11.selectByVisibleText(" Lohit Kumar ");
+		Thread.sleep(8000);
 	}
 
 	public void clickOnNextbuttonandConfirmorderbutton() throws InterruptedException {

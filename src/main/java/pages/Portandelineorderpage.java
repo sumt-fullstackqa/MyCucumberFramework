@@ -93,16 +93,12 @@ public class Portandelineorderpage extends TestBase {
 
 	public void uniportselectvaluesforlocationportandcapacity() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='uniLocation']")));
-		 dropdown1.selectByVisibleText("POP - Equinix SP3");
-		 Thread.sleep(5000);
+		 dropdown1.selectByValue("4");
+		 Thread.sleep(12000);
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");
 		Thread.sleep(4000);
-
-		Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='uniCapacity']")));
-		dropdown3.selectByVisibleText("100");
-		 Thread.sleep(5000);
 	}
 
 	public void uniportEntervalues(String portduration_1) throws InterruptedException {
@@ -137,31 +133,31 @@ public class Portandelineorderpage extends TestBase {
 	public void elineselectlatencyprotectionclassbandwidthandport() throws InterruptedException {
 		Select dropdown4 = new Select(driver.findElement(By.xpath("//select[@id='privateLineLTNCY']")));
 		dropdown4.selectByVisibleText("Best Effort");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 		Select dropdown5 = new Select(driver.findElement(By.xpath("//select[@id='privateLinePRTN']")));
 		dropdown5.selectByVisibleText("Protected");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 		Select dropdown6 = new Select(driver.findElement(By.xpath("//select[@id='privateLineSLA']")));
 		dropdown6.selectByVisibleText("Standard");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 		
 		Select dropdown7 = new Select(driver.findElement(By.xpath("//select[@id='privateLineBandwidth']")));
 		dropdown7.selectByVisibleText("5");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		Select dropdown8 = new Select(driver.findElement(By.xpath("//select[@id='privateLineSourcePort']")));
-		dropdown8.selectByValue("56");
-		Thread.sleep(3000);
+		dropdown8.selectByValue("0");
+		Thread.sleep(4000);
 		
 		Select dropdown9 = new Select(driver.findElement(By.xpath("//select[@id='privateLineDestLocation']")));
-		dropdown9.selectByValue("11");
-		Thread.sleep(3000);
+		dropdown9.selectByValue("5");
+		Thread.sleep(4000);
 
 		Select dropdown10 = new Select(driver.findElement(By.xpath("//select[@id='privateLineDestPort']")));
-		dropdown10.selectByValue("34");
-		Thread.sleep(3000);
+		dropdown10.selectByValue("0");
+		Thread.sleep(4000);
 	}
 
 	public void addelinetocart() throws InterruptedException {
@@ -182,7 +178,7 @@ public class Portandelineorderpage extends TestBase {
 		Thread.sleep(4000);
 	}
 
-	public void orderselectprimarycontact247contactandtechnicalcontactElineorder() {
+	public void orderselectprimarycontact247contactandtechnicalcontactElineorder() throws InterruptedException {
 		Select dropdown9 = new Select(driver.findElement(By.xpath("//select[@id='primaryContact']")));
 		dropdown9.selectByVisibleText(" Lohit Kumar ");
 
@@ -191,6 +187,7 @@ public class Portandelineorderpage extends TestBase {
 
 		Select dropdown11 = new Select(driver.findElement(By.xpath("//select[@id='technicalContact']")));
 		dropdown11.selectByVisibleText(" Lohit Kumar ");
+		Thread.sleep(4000);
 	}
 
 	public void clickOnNextbuttonandConfirmorderbuttonforeline() throws InterruptedException {

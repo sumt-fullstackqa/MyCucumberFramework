@@ -99,10 +99,6 @@ public class PortandETreeorderpage extends TestBase {
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");
 		Thread.sleep(4000);
-
-		Select dropdown3 = new Select(driver.findElement(By.xpath("//select[@id='uniCapacity']")));
-		dropdown3.selectByVisibleText("100");
-		 Thread.sleep(5000);
 	}
 
 	public void uniportEntervaluesetree(String portduration_1) throws InterruptedException {
@@ -152,7 +148,7 @@ public class PortandETreeorderpage extends TestBase {
 		Thread.sleep(3000);
 
 		Select dropdown8 = new Select(driver.findElement(By.xpath("//select[@id='privateTreeSourcePort']")));
-		dropdown8.selectByValue("62");
+		dropdown8.selectByValue("0");
 		Thread.sleep(3000);
 		
 		Select dropdown9 = new Select(driver.findElement(By.xpath("//select[@id='privateTreeDestLocation']")));
@@ -160,7 +156,7 @@ public class PortandETreeorderpage extends TestBase {
 		Thread.sleep(3000);
 
 		Select dropdown10 = new Select(driver.findElement(By.xpath("//select[@id='privateTreeDestPortOne']")));
-		dropdown10.selectByValue("57");
+		dropdown10.selectByValue("0");
 		Thread.sleep(3000);
 	}
 
@@ -182,7 +178,7 @@ public class PortandETreeorderpage extends TestBase {
 		Thread.sleep(4000);
 	}
 
-	public void orderselectprimarycontact247contactandtechnicalcontactEtreeorder() {
+	public void orderselectprimarycontact247contactandtechnicalcontactEtreeorder() throws InterruptedException {
 		Select dropdown9 = new Select(driver.findElement(By.xpath("//select[@id='primaryContact']")));
 		dropdown9.selectByVisibleText(" Lohit Kumar ");
 
@@ -191,6 +187,7 @@ public class PortandETreeorderpage extends TestBase {
 
 		Select dropdown11 = new Select(driver.findElement(By.xpath("//select[@id='technicalContact']")));
 		dropdown11.selectByVisibleText(" Lohit Kumar ");
+		Thread.sleep(4000);
 	}
 
 	public void clickOnNextbuttonandConfirmorderbuttonforetree() throws InterruptedException {
