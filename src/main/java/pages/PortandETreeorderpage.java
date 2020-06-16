@@ -94,7 +94,7 @@ public class PortandETreeorderpage extends TestBase {
 	public void uniportselectvaluesforlocationportandcapacityetree() throws InterruptedException {
 		Select dropdown1 = new Select(driver.findElement(By.xpath("//select[@id='uniLocation']")));
 		 dropdown1.selectByVisibleText("POP - 165 Halsey");
-		 Thread.sleep(5000);
+		 Thread.sleep(12000);
 
 		Select dropdown2 = new Select(driver.findElement(By.xpath("//select[@id='uniPortType']")));
 		dropdown2.selectByVisibleText("Ethernet U.N.I. Port - 100Gb");

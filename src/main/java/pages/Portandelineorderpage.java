@@ -192,6 +192,7 @@ public class Portandelineorderpage extends TestBase {
 
 	public void clickOnNextbuttonandConfirmorderbuttonforeline() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextbutton);
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", confirmorder);
 		Thread.sleep(5000);
 	}

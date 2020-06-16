@@ -172,6 +172,7 @@ public class Portandelanorder extends TestBase {
 
 	public void clickOnNextbuttonandConfirmorderbutton() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextbutton);
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", confirmorder);
 		Thread.sleep(5000);
 	}
