@@ -192,6 +192,7 @@ public class PortandETreeorderpage extends TestBase {
 
 	public void clickOnNextbuttonandConfirmorderbuttonforetree() throws InterruptedException {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextbutton1);
+		Thread.sleep(5000);
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", confirmorder1);
 		Thread.sleep(5000);
 	}
