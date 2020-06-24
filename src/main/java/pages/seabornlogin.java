@@ -1,17 +1,21 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 
 public class seabornlogin extends TestBase {
 
 	public static WebDriver driver;
 
+	Logger log = LoggerHelper.getLogger(seabornlogin.class);
+	
 	@SuppressWarnings("static-access")
 	public seabornlogin(WebDriver driver) {
 		this.driver = driver;

@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +11,15 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
 public class Portandelineorderpage extends TestBase {
 
 	public static WebDriver driver;
+	
+	Logger log = LoggerHelper.getLogger(Portandelineorderpage.class);
 
 	public Portandelineorderpage(WebDriver driver) {
 		this.driver = driver;
@@ -145,7 +149,7 @@ public class Portandelineorderpage extends TestBase {
 		
 		Select dropdown7 = new Select(driver.findElement(By.xpath("//select[@id='privateLineBandwidth']")));
 		dropdown7.selectByVisibleText("5");
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 
 		Select dropdown8 = new Select(driver.findElement(By.xpath("//select[@id='privateLineSourcePort']")));
 		dropdown8.selectByValue("0");
@@ -156,7 +160,7 @@ public class Portandelineorderpage extends TestBase {
 		Thread.sleep(4000);
 
 		Select dropdown10 = new Select(driver.findElement(By.xpath("//select[@id='privateLineDestPort']")));
-		dropdown10.selectByValue("0");
+		dropdown10.selectByValue("60");
 		Thread.sleep(4000);
 	}
 

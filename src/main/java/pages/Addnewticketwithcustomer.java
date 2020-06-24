@@ -2,6 +2,7 @@ package pages;
 
 import java.io.File;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
@@ -17,6 +19,9 @@ public class Addnewticketwithcustomer extends TestBase {
 
 	public static WebDriver driver;
 
+	
+	Logger log = LoggerHelper.getLogger(Addnewticketwithcustomer.class);
+	
 	@SuppressWarnings("static-access")
 	public Addnewticketwithcustomer(WebDriver driver) {
 		this.driver = driver;

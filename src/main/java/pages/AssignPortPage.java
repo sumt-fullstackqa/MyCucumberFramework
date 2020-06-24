@@ -4,6 +4,7 @@
 
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
@@ -25,6 +27,8 @@ import utility.ConfigProperties;
 public class AssignPortPage extends TestBase {
 
 	public static WebDriver driver;
+	
+	Logger log = LoggerHelper.getLogger(AssignPortPage.class);
 
 	@SuppressWarnings("static-access")
 	public AssignPortPage(WebDriver driver) {
@@ -43,7 +47,7 @@ public class AssignPortPage extends TestBase {
 
 	@FindBy(how = How.XPATH, using = "//input[@id='assignBtn']")
 	public WebElement assignbuttonport;
-
+		
 	seabornlogin sbloginoobj = new seabornlogin(TestBase.driver);
 
 	public void clickOnInventorymanagementandManagePort() throws Exception {
@@ -80,19 +84,19 @@ public class AssignPortPage extends TestBase {
 	public void AssignPortselectlocationandinventoryandportandbillingaccount() throws InterruptedException {
 		Select location = new Select(driver.findElement(By.xpath("//select[@id='Data_Center_Code']")));
 		location.selectByValue("4");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		Select inventory = new Select(driver.findElement(By.xpath("//select[@id='Device']")));
-		inventory.selectByValue("147");
-		Thread.sleep(3000);
+		inventory.selectByValue("148");
+		Thread.sleep(4000);
 
 		Select port = new Select(driver.findElement(By.xpath("//select[@id='Port']")));
 		port.selectByIndex(1);
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 		Select billingaccount = new Select(driver.findElement(By.xpath("//select[@id='billingAccountId']")));
 		billingaccount.selectByValue("212378");
-		Thread.sleep(3000);
+		Thread.sleep(4000);
 
 	}
 
@@ -127,8 +131,9 @@ public class AssignPortPage extends TestBase {
 			System.out.println("new port assigned to company");
 		} else {
 			System.out.println("Port assignment Failed");
-			Thread.sleep(5000);
+			Thread.sleep(12000);
 		}
 	}
 
+	
 }

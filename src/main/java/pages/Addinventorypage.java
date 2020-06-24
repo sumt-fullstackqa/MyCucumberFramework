@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +11,15 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
 public class Addinventorypage extends TestBase {
 
 	public static WebDriver driver;
+	
+	Logger log = LoggerHelper.getLogger(Addinventorypage.class);
 
 	@SuppressWarnings("static-access")
 	public Addinventorypage(WebDriver driver) {
@@ -62,7 +66,7 @@ public class Addinventorypage extends TestBase {
 		Actions actions = new Actions(driver);
 		WebElement mainMenu = driver.findElement(By.xpath("//a[@class='Inventory Management']"));
 		actions.moveToElement(mainMenu);
-		actions.click().build().perform();
+		Thread.sleep(5000);
 
 		WebElement subMenu = driver.findElement(By.xpath(
 				"//a[@href='http://seaborn.cloudsmartz.com/group/service-provider/inventory'][contains(.,'Inventory')]"));

@@ -1,5 +1,6 @@
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,12 +9,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
 public class UserResetPasswordPage {
 
 	public static WebDriver driver;
+	
+	Logger log = LoggerHelper.getLogger(UserResetPasswordPage.class);
 
 	public UserResetPasswordPage(WebDriver driver) {
 		this.driver = driver;

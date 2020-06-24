@@ -4,6 +4,7 @@
 
 package pages;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import helperLogger.LoggerHelper;
 import stepDefinition.TestBase;
 import utility.ConfigProperties;
 
@@ -24,6 +26,8 @@ import utility.ConfigProperties;
 public class Addinventorylibrary extends TestBase {
 
 	public static WebDriver driver;
+	
+	Logger log = LoggerHelper.getLogger(Addinventorylibrary.class);
 
 	@SuppressWarnings("static-access")
 	public Addinventorylibrary(WebDriver driver) {
@@ -85,7 +89,7 @@ public class Addinventorylibrary extends TestBase {
 		Thread.sleep(4000);
 		WebElement manufacturernamevalue = driver.findElement(By.xpath("//li[@tabindex='-1'][contains(.,'Cisco')]"));
 		manufacturernamevalue.click();
-		Thread.sleep(4000);
+		Thread.sleep(4000);	
 	}
 
 	public void addlibrarySelectvalues(String Notes_1, String Racksize_1) throws InterruptedException {
