@@ -1,0 +1,6 @@
+2020-07-15 01:19:16 INFO  TestBase:353 - Browser closed
+2020-07-15 01:30:03 INFO  class:58 - clicked on login link successfully
+2020-07-15 01:30:04 INFO  class:58 - Entered username and password successfully
+2020-07-15 01:30:06 INFO  class:58 - clicked on sign in button
+2020-07-15 01:30:08 INFO  class:58 - clicked on logout link and user gets logged out of application successfully
+2020-07-15 01:30:09 INFO  class:363 - Browser closed

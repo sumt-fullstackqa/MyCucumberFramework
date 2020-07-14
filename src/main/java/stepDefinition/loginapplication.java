@@ -7,25 +7,31 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pages.seabornlogin;
+import pages.login;
 import utility.ConfigProperties;
 
 public class loginapplication {
 
 	public static WebDriver driver;
 
-	seabornlogin pages = new seabornlogin(TestBase.driver);
-
-	@Given("^I navigate to the seaborn login page$")
-	public void i_navigate_to_the_mpc_login_page() throws Throwable {
+	login pages = new login(TestBase.driver);
+	
+	@Given("^I navigate to the web URL$")
+	public void i_navigate_to_the_web_URL() throws Throwable {
 		TestBase.driver.navigate().to(ObjectRepo.reader.getUrl());
 
 	}
+	@And("^click on login link$")
+	public void click_on_login_link() throws Throwable {
 
+		pages.clickonlogin();
+
+	}
+	
 	@When("^user enter Username and Password$")
 	public void user_enter_Username_and_Password() throws Throwable {
 
-		pages.Login(ConfigProperties.ADMINUSEREMAIL, ConfigProperties.ADMINPASSWORD);
+		pages.Login(ConfigProperties.USEREMAIL, ConfigProperties.PASSWORD);
 
 	}
 

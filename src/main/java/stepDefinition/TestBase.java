@@ -44,14 +44,24 @@ import configurationBrowser.IExploreBrowser;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import helperLogger.LoggerHelper;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utility.DateTimeHelper;
 import utility.ResourceHelper;
 
 public class TestBase {
 
-	private final static Logger log = LoggerHelper.getLogger(TestBase.class);
+	public static Logger logger = Logger.getLogger("Testbase.class");
+	
+	
+	public static void writeLogs(String msg)
+	{
+		logger.info(msg);
+	}
+	
+	public static void writeErrorLogs(Throwable t) {
+		
+		logger.error(t.getMessage());
+	}
 	public static String timeStamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 	public static WebDriver driver;
 
@@ -72,7 +82,7 @@ public class TestBase {
 		return new Function<WebDriver, Boolean>() {
 
 			public Boolean apply(WebDriver driver) {
-				log.debug("Waiting for Element : " + element);
+				logger.debug("Waiting for Element : " + element);
 				return element.isDisplayed();
 			}
 		};
@@ -93,28 +103,28 @@ public class TestBase {
 		try {
 			FileUtils.copyFile(((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE), destPath);
 		} catch (IOException e) {
-			log.error(e);
+			logger.error(e);
 			throw e;
 		}
-		log.info(destPath.getAbsolutePath());
+		logger.info(destPath.getAbsolutePath());
 		return destPath.getAbsolutePath();
 	}
 
 	public WebElement getElement(By locator) {
-		log.info(locator);
+		logger.info(locator);
 		if (IsElementPresentQuick(locator))
 			return driver.findElement(locator);
 
 		try {
 			throw new NoSuchElementException("Element Not Found : " + locator);
 		} catch (RuntimeException re) {
-			log.error(re);
+			logger.error(re);
 			throw re;
 		}
 	}
 
 	public WebElement getElementWithNull(By locator) {
-		log.info(locator);
+		logger.info(locator);
 		try {
 			return driver.findElement(locator);
 		} catch (NoSuchElementException e) {
@@ -125,7 +135,7 @@ public class TestBase {
 
 	public boolean IsElementPresentQuick(By locator) {
 		boolean flag = driver.findElements(locator).size() >= 1;
-		log.info(flag);
+		logger.info(flag);
 		return flag;
 	}
 
@@ -197,7 +207,7 @@ public class TestBase {
 
 	public WebDriver getBrowserObject(BrowserType bType) throws Exception {
 		try {
-			log.info(bType);
+			logger.info(bType);
 
 			switch (bType) {
 
@@ -224,7 +234,7 @@ public class TestBase {
 				throw new Exception(" Driver Not Found : " + new PropertyFileReader().getBrowser());
 			}
 		} catch (Exception e) {
-			log.equals(e);
+			logger.equals(e);
 			throw e;
 		}
 	}
@@ -232,7 +242,7 @@ public class TestBase {
 	public void setUpDriver(BrowserType bType) throws Exception {
 
 		driver = getBrowserObject(bType);
-		log.debug("InitializeWebDrive : " + driver.hashCode());
+		logger.debug("InitializeWebDrive : " + driver.hashCode());
 		driver.manage().timeouts().pageLoadTimeout(ObjectRepo.reader.getPageLoadTimeOut(), TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(ObjectRepo.reader.ImplicitWait(), TimeUnit.SECONDS);
 		/* driver.manage().window().maximize(); */
@@ -241,10 +251,10 @@ public class TestBase {
 	public void notifymessage(WebElement webElement, String expMsg) {
 		expMsg = webElement.getText();
 		if (webElement.isDisplayed() == true && expMsg.contains("successfully.")) {
-			log.info("Message Appears on Screen : " + expMsg);
+			logger.info("Message Appears on Screen : " + expMsg);
 
 		} else {
-			log.info("Message does not get displayed on Screen");
+			logger.info("Message does not get displayed on Screen");
 		}
 
 	}
@@ -350,7 +360,6 @@ public class TestBase {
 			}
 		}
 		driver.quit();
-		log.info("Browser closed");
+		logger.info("Browser closed");
 	}
-
 }
